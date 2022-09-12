@@ -1,4 +1,6 @@
 import {Flex,Box} from '@chakra-ui/react'
+import NavBar from './NavBar';
+import SideBar from './SideBar';
 
 const SideBarDesktop = () =>{
 
@@ -7,18 +9,12 @@ const SideBarDesktop = () =>{
         <Flex
            display={{base:'none',md:'flex'}}
         >
-        <Flex
-          minH={'100vh'}
-          w={'100%'}
-          maxW={'250px'}
-          bg={'#ccc'}
-          justify={'space-betewen'}
-          align={'center'}
-          px={'10px'}
-          >
-          </Flex>
+        <SideBar/>
+        <NavBar/>
             <Box
               w={'calc(100% - 250px)'}
+              h={'calc(100vh - 50px)'}
+              mt={'auto'}
               p={'.5rem'}
             >
                 BBB
