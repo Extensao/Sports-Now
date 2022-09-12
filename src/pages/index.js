@@ -1,11 +1,9 @@
-import {Button} from '@chakra-ui/react';
+import SidebarContent from '../components/DashBoard';
 
  const Home = () => {
   return (
     <>
-     <Button>
-   Olá
-     </Button>
+       <SidebarContent/>
     </>
   )
 }
