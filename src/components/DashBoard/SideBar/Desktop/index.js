@@ -1,8 +1,14 @@
 import {Flex,Box} from '@chakra-ui/react'
+import { useContext } from 'react';
+import { GlobalProvider } from '../../../../../context/globalContext';
 import NavBar from './NavBar';
 import SideBar from './SideBar';
 
 const SideBarDesktop = () =>{
+
+  const { 
+    menu
+  } = useContext(GlobalProvider);
 
     return(
         <>
@@ -12,8 +18,8 @@ const SideBarDesktop = () =>{
         <SideBar/>
         <NavBar/>
             <Box
-              w={'calc(100% - 250px)'}
-              h={'calc(100vh - 50px)'}
+              w={ menu ? 'calc(100% - 250px)':'calc(100% - 70px)'}
+              h={'calc(100vh - 70px)'}
               mt={'auto'}
               p={'.5rem'}
             >

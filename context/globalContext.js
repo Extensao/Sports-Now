@@ -5,7 +5,6 @@ const GlobalProvider = createContext({});
 
 const GlobalContext = ({children}) => {
 
-    //State para o itens do evento
     const [darkMode,setDarkMode] = useState(false);
 
     const handlerDarkMode = () => setDarkMode(!darkMode);

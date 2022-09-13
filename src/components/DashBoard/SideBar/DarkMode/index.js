@@ -20,7 +20,7 @@ const DarkMode = () =>{
          onClick={handlerDarkMode}
          borderRadius={'50%'}
          cursor={'pointer'}
-         mr={'1rem'}
+         mr={{base:'0',md:'1rem'}}
         >
             <IconsDarkMode/>
         </Flex>

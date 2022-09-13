@@ -1,4 +1,5 @@
 import {Flex} from '@chakra-ui/react'
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 const MenuNav = (props) =>{
 
@@ -16,7 +17,7 @@ const MenuNav = (props) =>{
             borderRadius={'50%'}
             cursor={'pointer'}
             >
-                X
+                <GiHamburgerMenu/>
             </Flex>
         </>
     )

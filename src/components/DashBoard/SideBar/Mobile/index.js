@@ -21,7 +21,7 @@ const SideBarMobile = () =>{
             justify={'space-between'}
             align={'center'}
             isOpen={isOpen}
-            px={'10px'}
+            px={'1rem'}
             >
                 <MenuNav isOpen={isOpen} onOpen={onOpen}/>
                 <NavLogo/>
@@ -33,8 +33,8 @@ const SideBarMobile = () =>{
             >
                 BBBB
             </Box>
-        </Flex>
         <DrawerSideBar isOpen={isOpen} onClose={onClose}/>
+        </Flex>
         </>
     )
 }
