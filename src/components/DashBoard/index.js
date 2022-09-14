@@ -1,15 +1,51 @@
-import SideBarDesktop from "./SideBar/Desktop"
-import SideBarMobile from "./SideBar/Mobile"
-import {Flex,Box} from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react';
+import React, { useContext } from 'react'
+import { GlobalProvider } from '../../../context/globalContext';
+import NavBar from './SideBar/Desktop/NavBar';
+import SideBar from './SideBar/Desktop/SideBar';
+import SideBarMobile from './SideBar/Mobile/SideBar/';
 
-const SidebarContent = () =>{
+const DashBoardContet = () => {
 
-    return(
-        <>
-           <SideBarMobile/>
-           <SideBarDesktop/>
-        </>
-    )
+    const { 
+        menu
+      } = useContext(GlobalProvider);
+
+  return (
+   <>
+       <Flex
+           display={{base:'none',md:'flex'}}
+        >     
+         <SideBar/>
+            <Flex
+            w={ menu ? 'calc(100% - 250px)':'calc(100% - 70px)'}
+            ml={'auto'}
+            direction={'column'}
+            >
+
+                <NavBar/>
+                <Box
+                p={'1rem'}
+                >
+                    dashboard
+                </Box>
+            </Flex>
+        </Flex>
+
+        <Flex
+              display={{base:'flex',md:'none'}}
+              direction={'column'}
+        >  
+          <SideBarMobile/>
+          <Box
+            w={'calc(100% - 70px)'}
+            p={'.5rem'}
+            >
+              dashboard
+            </Box>
+        </Flex>
+   </>
+  )
 }
 
-export default SidebarContent;
+export default DashBoardContet

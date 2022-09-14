@@ -10,7 +10,8 @@ const NavLogo = () => {
       height={'50px'}
       alt={'Imagem'}
       style={{
-        borderRadius:'50%'
+        borderRadius:'50%',
+        cursor:'pointer'
       }}
       />
   )

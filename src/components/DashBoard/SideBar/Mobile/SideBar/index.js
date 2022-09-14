@@ -1,8 +1,8 @@
-import {Flex,Box,useDisclosure} from '@chakra-ui/react'
-import DarkMode from '../DarkMode';
-import NavLogo from '../NavLogo';
-import DrawerSideBar from './DrawerSideBar';
-import MenuNav from './Menu';
+import {Flex,useDisclosure} from '@chakra-ui/react'
+import DarkMode from '../../DarkMode';
+import NavLogo from '../../NavLogo';
+import DrawerSideBar from '../DrawerSideBar';
+import MenuNav from '../Menu';
 
 const SideBarMobile = () =>{
 
@@ -10,10 +10,6 @@ const SideBarMobile = () =>{
 
     return(
         <>
-        <Flex
-          display={{base:'flex',md:'none'}}
-          direction={'column'}
-        >
             <Flex
             h={'70px'}
             w={'100%'}
@@ -27,14 +23,7 @@ const SideBarMobile = () =>{
                 <NavLogo/>
                 <DarkMode/>
             </Flex>
-            <Box
-            w={'calc(100% - 70px)'}
-            p={'.5rem'}
-            >
-                BBBB
-            </Box>
         <DrawerSideBar isOpen={isOpen} onClose={onClose}/>
-        </Flex>
         </>
     )
 }

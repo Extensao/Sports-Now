@@ -23,6 +23,7 @@ const DrawerSideBar = (props) =>{
         <DrawerContent 
            display={{base:'flex',md:'none'}}
            pt={'3rem'}
+           pb={'2rem'}
            >
           <DrawerCloseButton />
           <DrawerBody>
