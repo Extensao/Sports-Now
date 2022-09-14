@@ -1,8 +1,8 @@
-import {Box, Flex} from '@chakra-ui/react'
+import {Box, Flex, Link} from '@chakra-ui/react'
 import { useContext } from 'react';
 import { GlobalProvider } from '../../../../../../context/globalContext';
 import NavLink from '../../NavLink';
-import NavLogo from '../../NavLogo';
+import NavLogo from '../../../../NavLogo';
 
 
 const SideBar = () =>{
@@ -33,7 +33,11 @@ const SideBar = () =>{
              justify={'center'}
              align={'center'}
             >
-               <NavLogo/>
+            <Link
+            href={'/dashboard'}
+            >
+              <NavLogo/>
+            </Link>
             </Flex>
             <Box
                py={'1rem'}

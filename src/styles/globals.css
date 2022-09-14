@@ -9,3 +9,19 @@
 .sidebar::-webkit-scrollbar-thumb {
   background-color: blue;
 }
+
+.dropdown-perf > div{
+ inset: unset!important;
+ top: 4rem !important;;
+ right: 0!important;
+}
+
+@media screen and (max-width:768px) {
+  .dropdown-perf{
+    width: 100%!important;
+  }
+  .dropdown-perf > div{
+    position: unset!important;
+    width: 100%!important;
+  }
+}

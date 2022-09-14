@@ -1,8 +1,8 @@
-import {Flex,Link,useDisclosure} from '@chakra-ui/react'
-import DarkMode from '../../../../DarkMode';
-import NavLogo from '../../../../NavLogo';
-import DrawerSideBar from '../DrawerSideBar';
-import MenuNav from '../Menu';
+import { Flex, Link, useDisclosure } from "@chakra-ui/react";
+import DarkMode from "../../../../DarkMode";
+import MenuNav from "../../../../DashBoard/SideBar/Mobile/Menu";
+import NavLogo from "../../../../NavLogo";
+import DrawerSideBar from "../DrawerSideBar";
 
 const SideBarMobile = () =>{
 
@@ -21,7 +21,7 @@ const SideBarMobile = () =>{
             >
                 <MenuNav isOpen={isOpen} onOpen={onOpen}/>
                 <Link
-            href={'/dashboard'}
+            href={'/'}
             >
               <NavLogo/>
             </Link>

@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import {Flex} from '@chakra-ui/react'
-import { GlobalProvider } from '../../../../../context/globalContext';
+import { GlobalProvider } from '../../../context/globalContext';
 import IconsDarkMode from './IconsDarkMode';
 
 const DarkMode = () =>{

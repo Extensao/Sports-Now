@@ -6,7 +6,8 @@ import {
     DrawerCloseButton
 } from '@chakra-ui/react';
 import Profile from '../../../../Profile';
-import NavLink from '../../NavLink';
+import NavLink from '../../../NavLink';
+
 
 const DrawerSideBar = (props) =>{
 
@@ -28,8 +29,8 @@ const DrawerSideBar = (props) =>{
            >
           <DrawerCloseButton />
           <DrawerBody>
-          <Profile isOpen={props.isOpen}/>
-          <NavLink/>
+            <Profile isOpen={props.isOpen}/>
+            <NavLink isOpen={props.isOpen}/>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
