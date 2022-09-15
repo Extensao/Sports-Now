@@ -4,11 +4,10 @@ import {
     DrawerContent,
     DrawerBody,
     DrawerCloseButton,
-    Box,
     Flex
 } from '@chakra-ui/react';
-import Profile from '../../../../Profile';
 import NavLink from '../../../NavLink';
+import Profile from '../../Profile';
 
 
 const DrawerSideBar = (props) =>{

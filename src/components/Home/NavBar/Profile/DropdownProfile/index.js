@@ -1,10 +1,10 @@
 import React,{ useContext } from "react";
 import { Link, MenuItem, MenuList, Text } from "@chakra-ui/react";
-import { GlobalProvider } from "../../../../context/globalContext";
-import { handlerConnectGoogle } from "../../../../utils/authentication/signIn";
-import { handlerDesconectGoogle } from "../../../../utils/authentication/signOut";
 import {RiDashboardFill} from 'react-icons/ri';
 import {GoSignOut,GoSignIn} from 'react-icons/go';
+import { GlobalProvider } from "../../../../../../context/globalContext";
+import { handlerConnectGoogle } from "../../../../../../utils/authentication/signIn";
+import { handlerDesconectGoogle } from "../../../../../../utils/authentication/signOut";
 
 const DropdownProfile = () =>{
 

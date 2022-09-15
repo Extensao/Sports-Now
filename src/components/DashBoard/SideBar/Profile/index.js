@@ -1,16 +1,11 @@
-import { Box, Flex, Menu, MenuButton } from '@chakra-ui/react'
-import Image from 'next/image';
+import { Box, Menu, MenuButton } from '@chakra-ui/react'
 import React, { useContext } from 'react'
-import { GlobalProvider } from '../../../context/globalContext';
+import { GlobalProvider } from '../../../../../context/globalContext';
 import DropdownProfile from './DropdownProfile'
 
 const Profile = (props) => {
 
   const {login} = useContext(GlobalProvider);
-
-  var teste = login?.photoURL;
-
-  console.log(teste)
 
   return (
     <>
@@ -22,7 +17,7 @@ const Profile = (props) => {
    justify={'center'}
    mx={'auto'}
    cursor={'pointer'}
-   bgImage={`url('https://lh3.googleusercontent.com/a/AItbvmlSjQ_qH3CL9qYtisi8fMO4oVlf4rPtdLebi8UQ=s96-c')`}
+   bgImage={`url('${login?.photoURL}')`}
    bgSize={props.isOpen ? '80px' : '30px'}
    bgPosition={'center'}
    bgRepeat={'no-repeat'}

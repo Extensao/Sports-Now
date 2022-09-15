@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { GlobalProvider } from '../../../../../context/globalContext';
 import { link } from './links'
 
-const NavLink = () => {
+const NavLink = (prop) => {
 
     const { 
         menu

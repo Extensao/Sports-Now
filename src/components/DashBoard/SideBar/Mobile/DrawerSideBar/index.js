@@ -3,10 +3,11 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerBody,
-    DrawerCloseButton
+    DrawerCloseButton,
+    Flex
 } from '@chakra-ui/react';
-import Profile from '../../../../Profile';
 import NavLink from '../../NavLink';
+import Profile from '../../Profile';
 
 const DrawerSideBar = (props) =>{
 
@@ -28,7 +29,12 @@ const DrawerSideBar = (props) =>{
            >
           <DrawerCloseButton />
           <DrawerBody>
-          <Profile isOpen={props.isOpen}/>
+          <Flex
+          justify={'center'}
+          direction={'column'}
+          >
+            <Profile isOpen={props.isOpen}/>
+          </Flex>
           <NavLink/>
           </DrawerBody>
         </DrawerContent>

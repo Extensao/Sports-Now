@@ -1,6 +1,6 @@
 import { Flex} from '@chakra-ui/react'
 import DarkMode from '../../../../DarkMode'
-import Profile from '../../../../Profile';
+import Profile from '../../Profile';
 import Menu from '../Menu';
 
 const NavBar = () =>{
