@@ -6,7 +6,7 @@ import SideBarMobile from '../NavBar/Mobile/NavBar'
 const ServicoContent = () => {
   return (
    <>
-              <Flex
+       <Flex
            display={{base:'none',md:'flex'}}
            direction={'column'}
         >     

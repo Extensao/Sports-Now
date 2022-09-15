@@ -1,6 +1,6 @@
-import '../styles/globals.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import { GlobalContext } from '../../context/globalContext'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -16,6 +16,7 @@ const NavLink = () => {
             return(
                 <>
                 <Link
+                key={l.id}
                 href={l.href}
                 _hover={{
                     layerStyle:'none'

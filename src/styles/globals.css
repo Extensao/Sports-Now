@@ -10,18 +10,14 @@
   background-color: blue;
 }
 
-.dropdown-perf > div{
- inset: unset!important;
- top: 4rem !important;;
- right: 0!important;
+.dropdown-perfil > div{
+ top: 1.5rem !important;
 }
 
 @media screen and (max-width:768px) {
-  .dropdown-perf{
-    width: 100%!important;
-  }
-  .dropdown-perf > div{
+  .dropdown-perfil > div{
     position: unset!important;
-    width: 100%!important;
+    transform: none!important;
+    margin-top: 1rem!important;
   }
 }

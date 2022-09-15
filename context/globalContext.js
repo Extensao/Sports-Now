@@ -1,5 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
+import { createContext, useEffect, useState } from "react";
 
 const GlobalProvider = createContext({});
 
@@ -13,10 +14,19 @@ const GlobalContext = ({children}) => {
 
     const handlerMenu = () => setMenu(!menu);
 
+    const [login,setLogin] = useState({});
+
+    useEffect(()=>{
+        onAuthStateChanged(auth,(at) =>{
+            setLogin(at)
+        })
+    });
+
     let values = {
        darkMode,
        handlerDarkMode,
        menu,
+       login,
        handlerMenu
     }
 

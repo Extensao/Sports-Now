@@ -1,5 +1,4 @@
 import {RiDashboardFill} from 'react-icons/ri';
-import {HiDocumentSearch} from 'react-icons/hi';
 import {IoIosCreate} from 'react-icons/io';
 import {VscLayersDot,VscLayers} from 'react-icons/vsc';
 

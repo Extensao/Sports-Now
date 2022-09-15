@@ -1,34 +1,46 @@
-import { Box, Button, Flex, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger } from "@chakra-ui/react";
+import React,{ useContext } from "react";
+import { Link, MenuItem, MenuList, Text } from "@chakra-ui/react";
+import { GlobalProvider } from "../../../../context/globalContext";
+import { handlerConnectGoogle } from "../../../../utils/authentication/signIn";
+import { handlerDesconectGoogle } from "../../../../utils/authentication/signOut";
+import {RiDashboardFill} from 'react-icons/ri';
+import {GoSignOut,GoSignIn} from 'react-icons/go';
 
-const DropdownProfile = (props) =>{
+const DropdownProfile = () =>{
+
+    const {login} = useContext(GlobalProvider);
 
     return(
         <>
-        <Box
-       className="dropdown-perf"
-       mt={'1rem'}
-       display={props.isOpen ? 'block' : 'none'}
-        >
-        <Popover
-                isOpen={props.isOpen}
-                onClose={props.onClose}
-        >
-  <PopoverContent 
-  w={'100%'}
-  >
-        <PopoverArrow />
-        <PopoverBody
-        >
-            <Button
-            w={'100%'}
-            px={{base:'0',md:'2.5rem'}}
+       <MenuList>
+        {
+            !login ? 
+            <MenuItem
+            onClick={handlerConnectGoogle}
             >
-                Entrar
-            </Button>
-        </PopoverBody>
-    </PopoverContent>
-    </Popover>
-        </Box>
+               <GoSignIn/> <Text ml={'.5rem'}>Entrar</Text>
+            </MenuItem>
+            :
+            <>
+            <Link
+                href="/dashboard"
+                _hover={{
+                    layerStyle:'none'
+                }}
+            >
+            <MenuItem
+            >
+             <RiDashboardFill/><Text ml={'.5rem'}>DashBoard</Text>
+            </MenuItem>
+            </Link>
+            <MenuItem
+            onClick={handlerDesconectGoogle}
+            >
+             <GoSignOut/> <Text ml={'.5rem'}>Sair</Text>
+            </MenuItem>
+            </>
+        }
+      </MenuList>
         </>
     )
 }
