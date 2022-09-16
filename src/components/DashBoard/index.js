@@ -2,48 +2,714 @@ import { Box, Flex } from '@chakra-ui/react';
 import React, { useContext } from 'react'
 import { GlobalProvider } from '../../../context/globalContext';
 import NavBar from './SideBar/Desktop/NavBar';
-import SideBar from './SideBar/Desktop/SideBar';
-import SideBarMobile from './SideBar/Mobile/SideBar/';
+import SideBar from './SideBar/Desktop';
+import SideBarMobile from './SideBar/Mobile';
 
 const DashBoardContet = () => {
 
-    const { 
-        menu
-      } = useContext(GlobalProvider);
+  const { 
+    menu
+  } = useContext(GlobalProvider);
 
   return (
    <>
-       <Flex
-           display={{base:'none',md:'flex'}}
+       <Box
+           display={{base:'none',md:'block'}}
         >     
-         <SideBar/>
-            <Flex
-            w={ menu ? 'calc(100% - 250px)':'calc(100% - 70px)'}
-            ml={'auto'}
-            direction={'column'}
-            >
-
-                <NavBar/>
-                <Box
-                p={'1rem'}
-                >
-                    dashboard
-                </Box>
-            </Flex>
-        </Flex>
-
-        <Flex
-              display={{base:'flex',md:'none'}}
-              direction={'column'}
+          <SideBar/>
+          <NavBar/>
+          <Box
+          p={'1rem'}
+          h={'calc(100vh - 70px)'}
+          overflowY={'auto'}
+          w={menu ? 'calc(100% - 250px)' : 'calc(100% - 70px)'}
+          bg={'red'}
+          ml={'auto'}
+          >
+              dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard
+                dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard        dashboard
+                dashboard
+                dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard                    dashboard
+                dashboard
+          </Box>
+        </Box>
+        
+        <Box
+              display={{base:'block',md:'none'}}
         >  
           <SideBarMobile/>
           <Box
             w={'100%'}
+            h={'calc(100vh - 70px)'}
+            overflowY={'auto'}
             p={'.5rem'}
+            bg={'red'}
             >
               dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
+              dashboard
             </Box>
-        </Flex>
+        </Box>
    </>
   )
 }

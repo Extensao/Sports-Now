@@ -8,39 +8,39 @@ import { handlerDesconectGoogle } from "../../../../../../utils/authentication/s
 
 const DropdownProfile = () =>{
 
-    const {login} = useContext(GlobalProvider);
+     const {login} = useContext(GlobalProvider);
 
-    return(
+return(
+    <>
+   <MenuList>
+    {
+        !login ? 
+        <MenuItem
+        onClick={handlerConnectGoogle}
+        >
+           <GoSignIn/> <Text ml={'.5rem'}>Entrar</Text>
+        </MenuItem>
+        :
         <>
-       <MenuList>
-        {
-            !login ? 
-            <MenuItem
-            onClick={handlerConnectGoogle}
-            >
-               <GoSignIn/> <Text ml={'.5rem'}>Entrar</Text>
-            </MenuItem>
-            :
-            <>
-            <Link
-                href="/dashboard"
-                _hover={{
-                    layerStyle:'none'
-                }}
-            >
-            <MenuItem
-            >
-             <RiDashboardFill/><Text ml={'.5rem'}>DashBoard</Text>
-            </MenuItem>
-            </Link>
-            <MenuItem
-            onClick={handlerDesconectGoogle}
-            >
-             <GoSignOut/> <Text ml={'.5rem'}>Sair</Text>
-            </MenuItem>
-            </>
-        }
-      </MenuList>
+        <Link
+            href="/dashboard"
+            _hover={{
+                layerStyle:'none'
+            }}
+        >
+        <MenuItem
+        >
+         <RiDashboardFill/><Text ml={'.5rem'}>DashBoard</Text>
+        </MenuItem>
+        </Link>
+        <MenuItem
+        onClick={handlerDesconectGoogle}
+        >
+         <GoSignOut/> <Text ml={'.5rem'}>Sair</Text>
+        </MenuItem>
+        </>
+    }
+  </MenuList>
         </>
     )
 }

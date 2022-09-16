@@ -2,8 +2,8 @@ import { Box,Flex } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { GlobalProvider } from '../../../../context/globalContext'
 import NavBar from '../SideBar/Desktop/NavBar'
-import SideBar from '../SideBar/Desktop/SideBar'
-import SideBarMobile from '../SideBar/Mobile/SideBar'
+import SideBar from '../SideBar/Desktop'
+import SideBarMobile from '../SideBar/Mobile'
 
 const AcompanharEventoContent = () => {
 
@@ -13,37 +13,37 @@ const AcompanharEventoContent = () => {
 
   return (
     <>
-    <Flex
-           display={{base:'none',md:'flex'}}
+    <Box
+           display={{base:'none',md:'block'}}
         >     
          <SideBar/>
-       <Flex
-        w={ menu ? 'calc(100% - 250px)':'calc(100% - 70px)'}
-        ml={'auto'}
-        direction={'column'}
-        >
-
-          <NavBar/>
+         <NavBar/>
          <Box
-         p={'1rem'}
+            p={'1rem'}
+            h={'calc(100vh - 70px)'}
+            overflowY={'auto'}
+            w={menu ? 'calc(100% - 250px)' : 'calc(100% - 70px)'}
+            bg={'red'}
+            ml={'auto'}
          >
             Acompanhar Evento
          </Box>
-        </Flex>
-        </Flex>
+        </Box>
 
-        <Flex
+        <Box
               display={{base:'flex',md:'none'}}
-              direction={'column'}
         >  
           <SideBarMobile/>
           <Box
-            w={'100%'}
-            p={'.5rem'}
+              w={'100%'}
+              h={'calc(100vh - 70px)'}
+              overflowY={'auto'}
+              p={'.5rem'}
+              bg={'red'}
             >
                 Acompanhar Evento
             </Box>
-        </Flex>
+        </Box>
     </>
   )
 }

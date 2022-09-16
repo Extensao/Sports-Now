@@ -1,9 +1,8 @@
 import { Flex, Link, useDisclosure } from "@chakra-ui/react";
-import DarkMode from "../../../../DarkMode";
-import MenuNav from "../../../../DashBoard/SideBar/Mobile/Menu";
-import NavLogo from "../../../../NavLogo";
-import Profile from "../../Profile";
-import DrawerSideBar from "../DrawerSideBar";
+import DarkMode from "../../../DarkMode";
+import MenuNav from "../../../DashBoard/SideBar/Mobile/Menu";
+import NavLogo from "../../../NavLogo";
+import DrawerSideBar from "./DrawerSideBar";
 
 const SideBarMobile = () =>{
 
@@ -22,12 +21,11 @@ const SideBarMobile = () =>{
             >
                 <MenuNav isOpen={isOpen} onOpen={onOpen}/>
                 <Link
-            href={'/'}
-            >
-              <NavLogo/>
-            </Link>
+                href={'/'}
+                >
+                <NavLogo/>
+                </Link>
                 <DarkMode/>
-                <Profile/>
             </Flex>
         <DrawerSideBar isOpen={isOpen} onClose={onClose}/>
         </>

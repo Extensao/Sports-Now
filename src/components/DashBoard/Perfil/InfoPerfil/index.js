@@ -7,11 +7,13 @@ import TextPerfil from './TextPerfil'
    return (
      <>
         <Box
-         w={'100%'}
+         w={{base:'95%',md:'100%'}}
          p={'1rem'}
          boxShadow={'0 0 10px 0 rgba(0,0,0,.5)'}
          borderRadius={'5px'}
          mt={'.5rem'}
+         mx={'auto'}
+         bg={'#fff'}
         >
           <Flex
           justify={'space-between'}

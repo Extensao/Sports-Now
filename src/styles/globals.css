@@ -1,4 +1,7 @@
 
+html,body{
+  overflow: hidden;
+}
 
 .sidebar::-webkit-scrollbar {
   background-color: red;

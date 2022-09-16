@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { Box, DarkMode, Flex, useDisclosure } from '@chakra-ui/react'
 import NavBar from '../SideBar/Desktop/NavBar'
-import SideBarMobile from '../SideBar/Mobile/SideBar'
-import SideBar from '../SideBar/Desktop/SideBar'
+import SideBarMobile from '../SideBar/Mobile'
+import SideBar from '../SideBar/Desktop'
 import { GlobalProvider } from '../../../../context/globalContext'
 
 const CriarEventoContent = () => {
@@ -13,37 +13,37 @@ const CriarEventoContent = () => {
 
   return (
     <>
-<Flex
-           display={{base:'none',md:'flex'}}
+      <Box
+           display={{base:'none',md:'block'}}
         >     
-         <SideBar/>
-       <Flex
-        w={ menu ? 'calc(100% - 250px)':'calc(100% - 70px)'}
-        ml={'auto'}
-        direction={'column'}
-        >
-
+          <SideBar/>
           <NavBar/>
-         <Box
-         p={'1rem'}
-         >
+          <Box
+          p={'1rem'}
+          h={'calc(100vh - 70px)'}
+          overflowY={'auto'}
+          w={menu ? 'calc(100% - 250px)' : 'calc(100% - 70px)'}
+          bg={'red'}
+          ml={'auto'}
+          >
             Criar Evento
-         </Box>
-        </Flex>
-        </Flex>
-
-        <Flex
-              display={{base:'flex',md:'none'}}
-              direction={'column'}
+          </Box>
+       </Box>
+        
+        <Box
+              display={{base:'block',md:'none'}}
         >  
           <SideBarMobile/>
           <Box
             w={'100%'}
+            h={'calc(100vh - 70px)'}
+            overflowY={'auto'}
             p={'.5rem'}
+            bg={'red'}
             >
-              Criar Evento
+              Área de criar evento para mobile
             </Box>
-        </Flex>
+        </Box> 
     </>
   )
 }

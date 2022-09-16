@@ -1,35 +1,486 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import React from 'react'
-import NavBar from '../NavBar/Desktop/NavBar'
-import SideBarMobile from '../NavBar/Mobile/NavBar'
+import NavBar from '../NavBar/Desktop'
+import SideBarMobile from '../NavBar/Mobile'
 
 const QuemSomosContent = () => {
   return (
     <>
-           <Flex
-           display={{base:'none',md:'flex'}}
-           direction={'column'}
+       <Box
+           display={{base:'none',md:'block'}}
         >     
           <NavBar/>
           <Box
-           p={'.5rem'}
-          >
-            Oi
+            p={'1rem'}
+            h={'calc(100vh - 70px)'}
+            overflowY={'auto'}
+            w={'100%'}
+            ml={'auto'}
+            >
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
           </Box>
-        </Flex>
+        </Box>
 
-        <Flex
-              display={{base:'flex',md:'none'}}
-              direction={'column'}
+        <Box
+              display={{base:'block',md:'none'}}
         >  
           <SideBarMobile/>
           <Box
+            p={'1rem'}
+            h={'calc(100vh - 70px)'}
+            overflowY={'auto'}
             w={'100%'}
-            p={'.5rem'}
+            ml={'auto'}
             >
-              Quem somos
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home              Home
+              Home
+              Home
+              Home
+              Home
+              Home
+              Home
             </Box>
-        </Flex>
+        </Box>
     </>
   )
 }

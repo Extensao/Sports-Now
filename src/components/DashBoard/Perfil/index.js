@@ -1,8 +1,8 @@
 import { Box, Flex } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import NavBar from '../SideBar/Desktop/NavBar'
-import SideBarMobile from '../SideBar/Mobile/SideBar'
-import SideBar from '../SideBar/Desktop/SideBar'
+import SideBarMobile from '../SideBar/Mobile'
+import SideBar from '../SideBar/Desktop'
 import { GlobalProvider } from '../../../../context/globalContext'
 import InfoPerfil from './InfoPerfil'
 
@@ -14,37 +14,37 @@ const PerfilContent = () => {
 
   return (
     <>
-     <Flex
-           display={{base:'none',md:'flex'}}
+        <Box
+           display={{base:'none',md:'block'}}
         >     
-         <SideBar/>
-       <Flex
-        w={ menu ? 'calc(100% - 250px)':'calc(100% - 70px)'}
-        ml={'auto'}
-        direction={'column'}
-        >
-
+          <SideBar/>
           <NavBar/>
-         <Box
-         p={'1rem'}
-         >
+          <Box
+          p={'1rem'}
+          h={'calc(100vh - 70px)'}
+          overflowY={'auto'}
+          w={menu ? 'calc(100% - 250px)' : 'calc(100% - 70px)'}
+          bg={'red'}
+          ml={'auto'}
+          >
              <InfoPerfil/>
-         </Box>
-        </Flex>
-        </Flex>
+          </Box>
+        </Box>
 
-        <Flex
-              display={{base:'flex',md:'none'}}
-              direction={'column'}
+        <Box
+              display={{base:'block',md:'none'}}
         >  
           <SideBarMobile/>
           <Box
             w={'100%'}
-            p={'1rem'}
+            h={'calc(100vh - 70px)'}
+            overflowY={'auto'}
+            p={'.5rem'}
+            bg={'red'}
             >
                  <InfoPerfil/>
             </Box>
-        </Flex>
+        </Box> 
     </>
   )
 }

@@ -10,6 +10,7 @@ const ImgPerfil = () => {
    <>
    <Flex
    justify={{base:'center',md:'start'}}
+   mb={'1rem'}
    >
    <Box
            w={'80px'}

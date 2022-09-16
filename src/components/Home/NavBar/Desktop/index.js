@@ -1,9 +1,9 @@
 import { Box, Flex, Link } from '@chakra-ui/react'
 import React from 'react'
-import DarkMode from '../../../../DarkMode'
-import NavLogo from '../../../../NavLogo'
-import NavLink from '../../../NavLink'
-import Profile from '../../Profile'
+import DarkMode from '../../../DarkMode'
+import NavLogo from '../../../NavLogo'
+import NavLink from '../../NavLink'
+import Profile from '../Profile'
 
 const NavBar = () => {
   return (

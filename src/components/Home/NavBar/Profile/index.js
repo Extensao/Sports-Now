@@ -11,19 +11,19 @@ const Profile = (props) => {
     <>
     <Menu>
     <MenuButton
-   w={props.isOpen ? '80px' : '30px'}
-   h={props.isOpen ? '80px' : '30px'}
-   boxShadow={'0 0 10px 0 rgba(0,0,0,.5)'}
-   justify={'center'}
-   mx={'auto'}
-   cursor={'pointer'}
-   bgImage={`url('${login?.photoURL}')`}
-   bgSize={props.isOpen ? '80px' : '30px'}
-   bgPosition={'center'}
-   bgRepeat={'no-repeat'}
-   mb={{base:'1rem',md:'0'}}
-   align={'center'}
-   borderRadius={'50%'}
+    w={props.isOpen ? '80px' : '30px'}
+    h={props.isOpen ? '80px' : '30px'}
+    boxShadow={'0 0 10px 0 rgba(0,0,0,.5)'}
+    justify={'center'}
+    mx={'auto'}
+    cursor={'pointer'}
+    bgImage={`url('${login?.photoURL}')`}
+    bgSize={props.isOpen ? '80px' : '30px'}
+    bgPosition={'center'}
+    bgRepeat={'no-repeat'}
+    mb={{base:'1rem',md:'0'}}
+    align={'center'}
+    borderRadius={'50%'}
    >
    
    </MenuButton>

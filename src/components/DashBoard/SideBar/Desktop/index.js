@@ -1,8 +1,8 @@
 import {Box, Button, Flex, Link, Text} from '@chakra-ui/react'
 import { useContext } from 'react';
-import { GlobalProvider } from '../../../../../../context/globalContext';
-import NavLink from '../../NavLink';
-import NavLogo from '../../../../NavLogo';
+import { GlobalProvider } from '../../../../../context/globalContext';
+import NavLink from '../NavLink';
+import NavLogo from '../../../NavLogo';
 import { TbWorld } from 'react-icons/tb'
 
 const SideBar = () =>{
@@ -26,7 +26,7 @@ const SideBar = () =>{
           className={'sidebar'}
           >
             <Flex
-             boxShadow={'0 0 10px 0 rgba(0,0,0,.5)'}
+             borderBottom={'2px solid #000'}
              h={'70px'}
              w={'100%'}
              py={'2rem'}
