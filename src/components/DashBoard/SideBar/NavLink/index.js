@@ -29,7 +29,8 @@ const NavLink = (prop) => {
                     justifyContent={menu ? 'start' : {base:'start',md:'center'}}
                     my={l.my}
                     >
-                        <Box fontSize={'1rem'}>{l.icon}</Box><Text ml={menu ? '.5rem' : {base:'1rem',md:'0'}} display={menu ? 'block' : {base:'block',md:'none'}}>{l.name}</Text>
+                        <Box fontSize={'1rem'}>{l.icon}</Box>
+                        <Text ml={menu ? '.5rem' : {base:'1rem',md:'0'}} display={menu ? 'block' : {base:'block',md:'none'}}>{l.name}</Text>
                     </Button>
                 </Link>
                 </>
