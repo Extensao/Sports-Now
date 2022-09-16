@@ -38,7 +38,7 @@ const CriarEventoContent = () => {
         >  
           <SideBarMobile/>
           <Box
-            w={'calc(100% - 70px)'}
+            w={'100%'}
             p={'.5rem'}
             >
               Criar Evento

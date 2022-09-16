@@ -4,6 +4,7 @@ import NavBar from '../SideBar/Desktop/NavBar'
 import SideBarMobile from '../SideBar/Mobile/SideBar'
 import SideBar from '../SideBar/Desktop/SideBar'
 import { GlobalProvider } from '../../../../context/globalContext'
+import InfoPerfil from './InfoPerfil'
 
 const PerfilContent = () => {
 
@@ -27,7 +28,7 @@ const PerfilContent = () => {
          <Box
          p={'1rem'}
          >
-             Perfil
+             <InfoPerfil/>
          </Box>
         </Flex>
         </Flex>
@@ -38,10 +39,10 @@ const PerfilContent = () => {
         >  
           <SideBarMobile/>
           <Box
-            w={'calc(100% - 70px)'}
-            p={'.5rem'}
+            w={'100%'}
+            p={'1rem'}
             >
-                Perfil
+                 <InfoPerfil/>
             </Box>
         </Flex>
     </>

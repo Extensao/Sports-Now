@@ -1,0 +1,7 @@
+
+
+const UpdatePerfil = () =>{
+    
+}
+
+export {UpdatePerfil};

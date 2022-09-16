@@ -1,0 +1,6 @@
+
+const GetPerfil = () =>{
+    
+}
+
+export {GetPerfil};

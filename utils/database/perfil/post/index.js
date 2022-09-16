@@ -1,0 +1,7 @@
+
+
+const PostPerfil = () =>{
+    
+}
+
+export {PostPerfil};
