@@ -12,8 +12,7 @@ const QuemSomosContent = () => {
           <NavBar/>
           <Box
             p={'1rem'}
-            h={'calc(100vh - 70px)'}
-            overflowY={'auto'}
+            minH={'calc(100vh - 70px)'}
             w={'100%'}
             ml={'auto'}
             >
@@ -250,8 +249,7 @@ const QuemSomosContent = () => {
           <SideBarMobile/>
           <Box
             p={'1rem'}
-            h={'calc(100vh - 70px)'}
-            overflowY={'auto'}
+            minH={'calc(100vh - 70px)'}
             w={'100%'}
             ml={'auto'}
             >

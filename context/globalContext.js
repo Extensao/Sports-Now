@@ -22,11 +22,20 @@ const GlobalContext = ({children}) => {
         })
     });
 
+    const handlerScrollTop = () =>{
+    if(window.innerHeight > 30)
+        window.scroll({
+            top: 0,
+            behavior:'smooth'
+        })
+    }
+
     let values = {
        darkMode,
        handlerDarkMode,
        menu,
        login,
+       handlerScrollTop,
        handlerMenu
     }
 

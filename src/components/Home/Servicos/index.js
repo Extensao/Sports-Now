@@ -13,8 +13,7 @@ const ServicoContent = () => {
           <NavBar/>
           <Box
             p={'1rem'}
-            h={'calc(100vh - 70px)'}
-            overflowY={'auto'}
+            minH={'calc(100vh - 70px)'}
             w={'100%'}
             ml={'auto'}
             >
@@ -251,8 +250,7 @@ const ServicoContent = () => {
           <SideBarMobile/>
           <Box
             p={'1rem'}
-            h={'calc(100vh - 70px)'}
-            overflowY={'auto'}
+            minH={'calc(100vh - 70px)'}
             w={'100%'}
             ml={'auto'}
             >

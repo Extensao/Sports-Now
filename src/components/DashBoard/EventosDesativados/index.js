@@ -20,8 +20,7 @@ const EventoDesativadosContent = () => {
           <NavBar/>
           <Box
             p={'1rem'}
-            h={'calc(100vh - 70px)'}
-            overflowY={'auto'}
+            minH={'calc(100vh - 70px)'}
             w={menu ? 'calc(100% - 250px)' : 'calc(100% - 70px)'}
             bg={'red'}
             ml={'auto'}
@@ -36,8 +35,7 @@ const EventoDesativadosContent = () => {
           <SideBarMobile/>
           <Box
               w={'100%'}
-              h={'calc(100vh - 70px)'}
-              overflowY={'auto'}
+              minH={'calc(100vh - 70px)'}
               p={'.5rem'}
               bg={'red'}
             >
