@@ -5,6 +5,7 @@ import SideBarMobile from '../SideBar/Mobile'
 import SideBar from '../SideBar/Desktop'
 import { GlobalProvider } from '../../../../context/globalContext'
 import InfoPerfil from './InfoPerfil'
+import FormPerfil from './FormPerfil'
 
 const PerfilContent = () => {
 
@@ -28,6 +29,7 @@ const PerfilContent = () => {
           ml={'auto'}
           >
              <InfoPerfil/>
+             <FormPerfil/>
           </Box>
         </Box>
 
@@ -43,6 +45,7 @@ const PerfilContent = () => {
             bg={'red'}
             >
                  <InfoPerfil/>
+                 <FormPerfil/>
             </Box>
         </Box> 
     </>
