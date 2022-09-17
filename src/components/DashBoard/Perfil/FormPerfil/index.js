@@ -1,5 +1,5 @@
  import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GlobalProvider } from '../../../../../context/globalContext';
@@ -13,14 +13,15 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
     sobreNome,
     email,
     telefone,
-    onChangeNome,
-    onChangeSobreNome,
+    setNome,
+    setSobreNome,
     setEmail,
     onChangeTelefone,
-    valideteForm
+    valideteForm,
+    capitaLizer,
+    limiteNumber
   } = useContext(GlobalProvider);
 
-  
    return (
      <>
        <FormControl
@@ -42,9 +43,12 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
           <Box>
             <Input
             type={'text'}
-            value={nome}
+            value={capitaLizer(nome)}
             maxLength={150}
-            onChange={onChangeNome}
+            onKeyDown={(e)=>{
+              limiteNumber(e);
+            }}
+            onChange={e=>{setNome(e.target.value)}}
             />
           </Box>
         </Box>
@@ -58,8 +62,11 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
             <Input
                 type={'text'}
                 maxLength={150}
-                value={sobreNome}
-                onChange={onChangeSobreNome}
+                value={capitaLizer(sobreNome)}
+                onKeyDown={(e)=>{
+                  limiteNumber(e);
+                }}
+                onChange={e=>{setSobreNome(e.target.value)}}
             />
           </Box>
         </Box>
