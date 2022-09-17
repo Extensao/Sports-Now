@@ -64,7 +64,7 @@ const TextPerfil = () => {
             {
                 hiddenEmail &&
                 <Box
-                animation={`${spin} 2s ease-in-out`}
+                animation={`${spin} .5s ease-in-out`}
                 ml={'.25rem'}
                 >
                   {login?.email}
@@ -101,7 +101,7 @@ const TextPerfil = () => {
             {
                 hiddenNome &&
                 <Box 
-                animation={`${spin} 2s ease-in-out`}
+                animation={`${spin} .8s ease-in-out`}
                 ml={'.25rem'}
                 >
                   {login?.displayName}

@@ -1,6 +1,6 @@
  import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
-import React, { useContext } from 'react'
-import { toast, ToastContainer } from 'react-toastify';
+import React, { useContext, useEffect } from 'react'
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GlobalProvider } from '../../../../../context/globalContext';
 import { PostPerfil } from '../../../../../utils/database/perfil/post';
@@ -13,14 +13,14 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
     sobreNome,
     email,
     telefone,
-    setNome,
-    setSobreNome,
+    onChangeNome,
+    onChangeSobreNome,
     setEmail,
     onChangeTelefone,
+    valideteForm
   } = useContext(GlobalProvider);
 
-  const notify = () => toast.success("Sucesso no seu cadastro!");
-
+  
    return (
      <>
        <FormControl
@@ -42,8 +42,9 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
           <Box>
             <Input
             type={'text'}
+            value={nome}
             maxLength={150}
-            onChange={e=>{setNome(e.target.value)}}
+            onChange={onChangeNome}
             />
           </Box>
         </Box>
@@ -57,7 +58,8 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
             <Input
                 type={'text'}
                 maxLength={150}
-                onChange={e=>{setSobreNome(e.target.value)}}
+                value={sobreNome}
+                onChange={onChangeSobreNome}
             />
           </Box>
         </Box>
@@ -71,6 +73,7 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
             <Input
             type={'email'}
             maxLength={150}
+            value={email}
             onChange={e=>{setEmail(e.target.value)}}
             />
           </Box>
@@ -98,8 +101,8 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
           w={'100%'}
           maxW={'700px'}
           onClick={()=>{
-            PostPerfil(nome,sobreNome,email,telefone)
-            notify();
+            PostPerfil(nome,sobreNome,email,telefone);
+            valideteForm();
           }}
           >
             Salvar
