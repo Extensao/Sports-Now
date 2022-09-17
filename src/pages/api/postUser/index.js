@@ -9,8 +9,6 @@ const handlerPostUser = async (req, res) => {
         
         var {Nome, SobreNome, Email, Telefone} = req.body;
 
-        console.log(Nome);
-
         var NomeCompleto = `${Nome} ${SobreNome}`;
 
         var dateCreate = new Date();

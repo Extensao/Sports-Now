@@ -11,7 +11,7 @@ const PostPerfil = (nome,sobreNome,email,telefone) =>{
            Telefone: telefone
         })
         .then((res)=>{
-            alert("Sucesso no post !!",res)
+          
         })
         .catch((err)=>{
            console.log(err)

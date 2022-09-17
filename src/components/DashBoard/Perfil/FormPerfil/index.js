@@ -1,7 +1,10 @@
  import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
 import React, { useContext } from 'react'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { GlobalProvider } from '../../../../../context/globalContext';
 import { PostPerfil } from '../../../../../utils/database/perfil/post';
+
  
  const FormPerfil = () => {
 
@@ -15,6 +18,8 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
     setEmail,
     onChangeTelefone,
   } = useContext(GlobalProvider);
+
+  const notify = () => toast.success("Sucesso no seu cadastro!");
 
    return (
      <>
@@ -92,12 +97,16 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
           type={'submit'}
           w={'100%'}
           maxW={'700px'}
-          onClick={()=>{PostPerfil(nome,sobreNome,email,telefone)}}
+          onClick={()=>{
+            PostPerfil(nome,sobreNome,email,telefone)
+            notify();
+          }}
           >
             Salvar
           </Button>
         </Box>
        </FormControl>
+       <ToastContainer/>
      </>
    )
  }

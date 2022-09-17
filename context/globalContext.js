@@ -58,8 +58,8 @@ const GlobalContext = ({children}) => {
         GetPerfil(setData);
     },[])
 
-    console.log(data);
-    
+
+
     let values = {
        darkMode,
        handlerDarkMode,
