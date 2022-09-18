@@ -5,10 +5,10 @@ const connection =  mysql.createPool({
   // user: process.env.MYSQL_USER,
   // database: process.env.MYSQL_DB,
   // password: process.env.MYSQL_PWD
-  host: 'mysql://b0eabefc25d182:0694f9cc@us-cdbr-east-06.cleardb.net/heroku_1700fc8b6ab2194?reconnect=true',
-  user: 'usuario:b0eabefc25d182',
-  database: 'us-cdbr-east-06.cleardb.net',
-  password: 'heroku_1700fc8b6ab2194'
+  host: process.env.MYSQL_HOST_HEROKU,
+  user: process.env.MYSQL_USER_HEROKU,
+  database: process.env.MYSQL_DB_HEROKU,
+  password: process.env.MYSQL_PWD_HEROKU
 })
 
 export {connection}
