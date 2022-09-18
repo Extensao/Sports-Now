@@ -18,7 +18,7 @@ const ScroolTopPage = () => {
      bg={'#fff'}
      boxShadow={'0 0 10px 0 rgba(0,0,0,.5)'}
      onClick={handlerScrollTop}
-     position={'absolute'}
+     position={'fixed'}
      bottom={'1rem'}
      right={'2rem'}
      justify={'center'}

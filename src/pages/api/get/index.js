@@ -1,7 +1,8 @@
 import React from 'react'
-import { connection } from '../../../../config/mySql'
+import { connection } from '../../../../../config/mySql';
 
-const getAll = async (req, res) => {
+
+const getUsers = async (req, res) => {
 
     if (req.method === 'GET') {
 
@@ -18,4 +19,4 @@ const getAll = async (req, res) => {
 
 }
 
-export default getAll
+export default getUsers

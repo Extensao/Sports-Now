@@ -2,15 +2,18 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { createContext, useEffect, useState } from "react";
 import { mask, unMask } from 'remask';
-import { GetPerfil } from "../utils/database/perfil/get";
 import { toast } from 'react-toastify';
+import { GetEvento } from "../utils/database/get/evento";
+import { GetUser } from "../utils/database/get/user";
 
 const GlobalProvider = createContext({});
 
 const GlobalContext = ({children}) => {
 
 
-    const [data,setData] = useState([]);
+    const [dataUsers,setDataUsers] = useState([]);
+
+    const [dataEventos,setDataEventos] = useState([]);
 
     const [darkMode,setDarkMode] = useState(false);
 
@@ -25,11 +28,7 @@ const GlobalContext = ({children}) => {
 
     // State para Perfil
 
-    const [nome,setNome] = useState("");
-
-    const [sobreNome,setSobreNome] = useState("");
-
-    const [email,setEmail] = useState("");
+    const [nickName,setNickName] = useState("");
 
     const [telefone,setTelefone] = useState("");
 
@@ -99,7 +98,7 @@ const GlobalContext = ({children}) => {
 
     useEffect(()=>{
         onAuthStateChanged(auth,(at) =>{
-            setLogin(at)
+            setLogin(at);
         })
     });
 
@@ -113,94 +112,51 @@ const GlobalContext = ({children}) => {
 
     const valideteForm = ()=>{
 
-        if ( nome != "" && 
-             sobreNome != "" && 
-             email != "" && 
+        if ( nickName != "" && 
              telefone != "")
           {
            toast.success("Sucesso no seu cadastro!");
           }  
-          else if( nome == "" && 
-                  sobreNome == "" && 
-                  email == "" && 
+          else if( nickName == "" && 
                   telefone == "")
           {
             toast.warning("Preencha todos os campos!");
           } 
-          else if (sobreNome == "" && email == "" && telefone == "" && nome != "")
+          else if (nickName == "" && telefone == "")
           {
-            toast.warning("Preencha o campos de sobre nome, email e telefone");
+            toast.warning("Preencha o campos de sobre nickName e telefone");
           }
-          else if (email == "" && telefone == "" && nome != "" && sobreNome != "" )
+          else if (nickName == "")
           {
-            toast.warning("Preencha o campos de email e telefone");
-          }
-          else if (nome == "" && sobreNome == "" && email != "" && telefone != "")
-          {
-            toast.warning("Preencha o campos de nome e sobre nome");
-          }
-          else if (nome == "" && sobreNome == "" && email == "" && telefone != "")
-          {
-            toast.warning("Preencha o campos de nome, sobre nome e email");
-          }
-          else if (sobreNome == "" && email == "" && telefone != "" && nome != "")
-          {
-            toast.warning("Preencha o campos de sobre nome e email");
-          }
-          else if (email == "" && telefone == "" && nome != "" && sobreNome != "")
-          {
-            toast.warning("Preencha o campos de email e telefone");
-          }
-          else if (nome == "" && sobreNome == "" && telefone == "" && email != "")
-          {
-            toast.warning("Preencha o campos de nome, sobre nome e telefone");
-          }
-          else if (nome == "" && telefone == "" && sobreNome != "" && email != "")
-          {
-            toast.warning("Preencha o campos de nome e telefone");
-          }
-          else if (nome == "" && email == "" && telefone == "" && sobreNome != "")
-          {
-            toast.warning("Preencha o campos de nome, email e telefone");
-          }
-          else if (nome == "")
-          {
-            toast.warning("Preencha o campo de nome");
-          }
-          else if(sobreNome == "")
-          {
-            toast.warning("Preencha o campo de sobre nome");
-          }
-          else if (email == "")
-          {
-            toast.warning("Preencha o campo de email");
+            toast.warning("Preencha o campo de nickName");
           }
           else if (telefone == "")
           {
             toast.warning("Preencha o campo de telefone");
           } 
-}
+  }
+
+  useEffect(()=>{
+    GetUser(setDataUsers);
+  },[])
+
     useEffect(()=>{
-        GetPerfil(setData);
-    },[])
-
-
+      GetEvento(setDataEventos);
+  },[])
 
     let values = {
        darkMode,
+       dataUsers,
        handlerDarkMode,
        menu,
        login,
+       dataUsers,
        handlerScrollTop,
        handlerMenu,
-       setNome,
        capitaLizer,
-       setSobreNome,
-       setEmail,
+       setNickName,
        onChangeTelefone,
-       nome,
-       sobreNome,
-       email,
+       nickName,
        telefone,
        valideteForm,
        limiteNumber

@@ -1,7 +1,0 @@
-
-
-const UpdatePerfil = () =>{
-    
-}
-
-export {UpdatePerfil};

@@ -3,24 +3,25 @@ import React, { useContext } from 'react'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GlobalProvider } from '../../../../../context/globalContext';
-import { PostPerfil } from '../../../../../utils/database/perfil/post';
+import { FormPerfilUser } from '../../../../../utils/database/post/formPerfilUser';
+import { UpdatePerfilUser } from '../../../../../utils/database/put/putPerfil/updatePerfilUser';
 
  
  const FormPerfil = () => {
 
   const {
-    nome,
-    sobreNome,
-    email,
+    nickName,
     telefone,
-    setNome,
-    setSobreNome,
-    setEmail,
+    setNickName,
+    login,
     onChangeTelefone,
     valideteForm,
     capitaLizer,
-    limiteNumber
+    limiteNumber,
+    dataUsers
   } = useContext(GlobalProvider);
+
+
 
    return (
      <>
@@ -38,50 +39,17 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
         my={'.5rem'}
         >
           <FormLabel>
-            Nome
+            NickName
           </FormLabel>
           <Box>
             <Input
             type={'text'}
-            value={capitaLizer(nome)}
+            value={capitaLizer(nickName)}
             maxLength={150}
             onKeyDown={(e)=>{
               limiteNumber(e);
             }}
-            onChange={e=>{setNome(e.target.value)}}
-            />
-          </Box>
-        </Box>
-        <Box
-          my={'.5rem'}
-        >
-          <FormLabel>
-            Sobre Nome
-          </FormLabel>
-          <Box>
-            <Input
-                type={'text'}
-                maxLength={150}
-                value={capitaLizer(sobreNome)}
-                onKeyDown={(e)=>{
-                  limiteNumber(e);
-                }}
-                onChange={e=>{setSobreNome(e.target.value)}}
-            />
-          </Box>
-        </Box>
-        <Box
-          my={'.5rem'}
-        >
-          <FormLabel>
-           Email
-          </FormLabel>
-          <Box>
-            <Input
-            type={'email'}
-            maxLength={150}
-            value={email}
-            onChange={e=>{setEmail(e.target.value)}}
+            onChange={e=>{setNickName(e.target.value)}}
             />
           </Box>
         </Box>
@@ -103,17 +71,32 @@ import { PostPerfil } from '../../../../../utils/database/perfil/post';
         w={'100%'}
        textAlign={'center'}
         >
-          <Button
-          type={'submit'}
-          w={'100%'}
-          maxW={'700px'}
-          onClick={()=>{
-            PostPerfil(nome,sobreNome,email,telefone);
-            valideteForm();
-          }}
-          >
-            Salvar
+          {
+            dataUsers.map(e => e.email).includes(login.email) ?
+            <Button
+            type={'submit'}
+            w={'100%'}
+            maxW={'700px'}
+            onClick={()=>{
+              UpdatePerfilUser(nickName,telefone,login?.email)
+              valideteForm();
+            }}
+            >
+              Editar
+            </Button>
+            :
+            <Button
+            type={'submit'}
+            w={'100%'}
+            maxW={'700px'}
+            onClick={()=>{
+              FormPerfilUser(login?.displayName,login?.email,telefone,nickName,login.photoURL)
+              valideteForm();
+            }}
+            >
+              Salvar
           </Button>
+           }
         </Box>
        </FormControl>
        <ToastContainer/>

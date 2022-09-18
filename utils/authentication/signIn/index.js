@@ -6,7 +6,7 @@ const handlerConnectGoogle = async() =>{
 
   await signInWithPopup(auth,providerGoogle)
   .then(res =>{
-    console.log("Sucesso na conexão do provider do google")
+    console.log("Sucesso na conexão do provider do google");
   })
   .catch(err =>{
     console.log("Não foi possível se conectar ao provider do google : ",err)
