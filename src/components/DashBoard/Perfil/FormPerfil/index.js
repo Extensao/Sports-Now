@@ -117,6 +117,7 @@ import { UpdatePerfilUser } from '../../../../../utils/database/put/putPerfil/up
             <Button
             type={'submit'}
             w={'100%'}
+            disabled={activeEditeTelefone == true && activeEditeNickName == true ? false : true}
             maxW={'700px'}
             onClick={()=>{
               UpdatePerfilUser(nickName,telefone,login?.email)
