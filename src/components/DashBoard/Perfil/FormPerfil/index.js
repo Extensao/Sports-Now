@@ -1,5 +1,5 @@
  import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GlobalProvider } from '../../../../../context/globalContext';
@@ -22,6 +22,13 @@ import { UpdatePerfilUser } from '../../../../../utils/database/put/putPerfil/up
   } = useContext(GlobalProvider);
 
 
+  const [activeEditeNickName,setActiveEditeNickName] = useState(false);
+
+  const handlerActiveEditeNickName = () =>setActiveEditeNickName(!activeEditeNickName)
+
+  const [activeEditeTelefone,setActiveEditeTelefone] = useState(false);
+
+  const handlerActiveEditeTelefone = () =>setActiveEditeTelefone(!activeEditeTelefone)
 
    return (
      <>
@@ -41,6 +48,22 @@ import { UpdatePerfilUser } from '../../../../../utils/database/put/putPerfil/up
           <FormLabel>
             NickName
           </FormLabel>
+          {
+            dataUsers.map(e => e.email).includes(login.email) ?
+            dataUsers.map(e => 
+              e.email == login.email &&
+              <>
+                <Box>
+                <Input
+                type={'text'}
+                value={activeEditeNickName ? capitaLizer(nickName) : e.nick_name}
+                onClick={handlerActiveEditeNickName}
+                onChange={e=>{setNickName(e.target.value)}}
+                />
+              </Box>
+              </>
+              )
+          :
           <Box>
             <Input
             type={'text'}
@@ -52,19 +75,37 @@ import { UpdatePerfilUser } from '../../../../../utils/database/put/putPerfil/up
             onChange={e=>{setNickName(e.target.value)}}
             />
           </Box>
+          }
         </Box>
         <Box>
           <FormLabel>
            Telefone
           </FormLabel>
+          {
+            dataUsers.map(e => e.email).includes(login.email) ?
+            dataUsers.map(e => 
+              e.email == login.email &&
+              <>
+                <Box>
+                <Input
+                type={'text'}
+                value={activeEditeTelefone ? telefone : e.telefone}
+                onClick={handlerActiveEditeTelefone}
+                onChange={onChangeTelefone}
+                />
+              </Box>
+              </>
+              )
+          :
           <Box>
-            <Input
-            type={'text'}
-            maxLength={15}
-            value={telefone}
-            onChange={onChangeTelefone}
-            />
-          </Box>
+          <Input
+          type={'text'}
+          maxLength={15}
+          value={telefone}
+          onChange={onChangeTelefone}
+          />
+        </Box>
+          }
         </Box>
         <Box
         mt={'1rem'}
