@@ -1,18 +1,18 @@
 import React from 'react'
 import { connection } from '../../../../../config/mySql'
 
-const handlerPostPerfilUser = async (req, res) => {
+const handlerPostPermissao = async (req, res) => {
 
     if (req.method === 'POST') {
 
         const promisePool = connection.promise();
         
-        var {Nome,Email,Telefone,NickName,PhotoURL} = req.body;
+        var {IdUser,TipoPermissao} = req.body;
 
         var dateCreate = new Date("DD/MM/YYYY");
   
-       await promisePool.query('INSERT INTO tb_user (nome,email,telefone,criacao_data_user,ativo_login,nick_name,img_user) VALUES (?,?,?,?,?,?,?)',
-       [Nome,Email,Telefone,dateCreate,'1',NickName,PhotoURL])
+       await promisePool.query('INSERT INTO tb_permissao (id_user,tipo_permissao,data_permissao) VALUES (?,?)',
+       [IdUser,TipoPermissao,dateCreate])
           .then(([rows]) =>{
             res.status(200).json(rows)
           }).catch(err=>{
@@ -23,4 +23,4 @@ const handlerPostPerfilUser = async (req, res) => {
 
 }
 
-export default handlerPostPerfilUser
+export default handlerPostPermissao

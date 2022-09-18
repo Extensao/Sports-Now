@@ -11,12 +11,13 @@ import { AtivoUser } from "../../../../../../utils/database/put/putStatus/AtivoU
 const DropdownProfile = () =>{
 
      const {
-        login
+        login,
+        dataUsers
     } = useContext(GlobalProvider);
 
     useEffect(()=>{
         setTimeout(()=>{
-            if(login != null) AtivoUser(login.email)
+            if(login != null && dataUsers.length > 1) AtivoUser(login.email)
         },1000)
     })
 

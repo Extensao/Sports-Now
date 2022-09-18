@@ -9,7 +9,7 @@ const handlerPutStatusAtivoUser = async (req, res) => {
         
         var {Email} = req.body;
   
-            await promisePool.query('UPDATE tb_user u SET u.ativo = 1 WHERE u.ativo = 0 AND u.email = ? ',
+            await promisePool.query('UPDATE tb_user u SET u.ativo_login = 1 WHERE u.ativo_login = 0 AND u.email = ? ',
             [Email])
                .then(([rows]) =>{
                  res.status(200).json(rows)

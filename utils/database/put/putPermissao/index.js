@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const UpdatePerfilUser = (nickName,telefone,email) =>{
+const UpdatePermissao = (idUser,tipoPermissao) =>{
+
 
     axios.put("/api/put/putFormUser/",
     {
-        NickName: nickName,
-        Telefone: telefone,
-        Email: email
+        IdUser: idUser,
+        TipoPermissao: tipoPermissao
     })
     .then((res)=>{
         console.log(res)
@@ -16,4 +16,4 @@ const UpdatePerfilUser = (nickName,telefone,email) =>{
     });
 }
 
-export {UpdatePerfilUser};
+export {UpdatePermissao};
