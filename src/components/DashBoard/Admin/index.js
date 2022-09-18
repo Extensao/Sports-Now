@@ -31,7 +31,7 @@ const AdminContent = () => {
         </Box>
 
         <Box
-              display={{base:'flex',md:'none'}}
+              display={{base:'block',md:'none'}}
         >  
           <SideBarMobile/>
           <Box
