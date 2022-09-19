@@ -4,6 +4,7 @@ import { GlobalProvider } from '../../../../context/globalContext';
 import SideBar from '../SideBar/Desktop';
 import NavBar from '../SideBar/Desktop/NavBar';
 import SideBarMobile from '../SideBar/Mobile';
+import PaginacaoPermissao from './PaginacaoPermissao';
 import SearchPermissao from './SearchPermissao';
 
 const AdminContent = () => {
@@ -27,6 +28,7 @@ const AdminContent = () => {
             ml={'auto'}
          >
             <SearchPermissao/>
+            <PaginacaoPermissao/>
          </Box>
         </Box>
 
@@ -41,6 +43,7 @@ const AdminContent = () => {
               bg={'red'}
             >
                <SearchPermissao/>
+               <PaginacaoPermissao/>
             </Box>
         </Box>
     </>

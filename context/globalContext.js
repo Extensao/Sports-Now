@@ -26,59 +26,71 @@ const GlobalContext = ({children}) => {
     const [login,setLogin] = useState({});
 
 
+    const [searchUsers,setSearchUsers] = useState("");
+
     // State para Perfil
 
     const [nickName,setNickName] = useState("");
 
     const [telefone,setTelefone] = useState("");
 
-    
- const limiteNumber = (e) =>{
-    if(
-        e.key == '0' ||
-        e.key == '1' ||
-        e.key == '2' ||
-        e.key == '3' ||
-        e.key == '4' ||
-        e.key == '5' ||
-        e.key == '6' ||
-        e.key == '7' ||
-        e.key == '8' ||
-        e.key == '9' ||
-        e.keyCode == 226 ||
-        e.keyCode == 193 ||
-        e.keyCode == 191 ||
-        e.keyCode == 188 ||
-        e.keyCode == 221 ||
-        e.keyCode == 220 ||
-        e.keyCode == 187 ||
-        e.keyCode == 109 ||
-        e.keyCode == 189 ||
-        e.keyCode == 48 ||
-        e.keyCode == 106 ||
-        e.keyCode == 107 ||
-        e.keyCode == 111 ||
-        e.keyCode == 49 ||
-        e.keyCode == 50 ||
-        e.keyCode == 51 ||
-        e.keyCode == 52 ||
-        e.keyCode == 53 ||
-        e.keyCode == 54 ||
-        e.keyCode == 55 ||
-        e.keyCode == 56 ||
-        e.keyCode == 57 ||
-        e.keyCode == 58 ||
-        e.keyCode == 59 ||
-        e.keyCode == 60 ||
-        e.keyCode == 192 
-        ){
-        e.preventDefault()
-    }else if(
-               e.key == 32 || 
-               e.keyCode == 8){
-    }
-   }
+    const [itensPage,setItensPage] = useState(8);
 
+     const [currentPage,setCurrentPage] = useState(0);
+
+
+      const pagesUsers = Math.ceil(dataUsers.length / itensPage);
+      const startIndexUsers = currentPage * itensPage;
+      const endIndexUsers = startIndexUsers + itensPage;
+      const currenItenUsers = dataUsers.slice(startIndexUsers,endIndexUsers);
+     
+
+      console.log(currenItenUsers)
+      const limiteNumber = (e) =>{
+          if(
+              e.key == '0' ||
+              e.key == '1' ||
+              e.key == '2' ||
+              e.key == '3' ||
+              e.key == '4' ||
+              e.key == '5' ||
+              e.key == '6' ||
+              e.key == '7' ||
+              e.key == '8' ||
+              e.key == '9' ||
+              e.keyCode == 226 ||
+              e.keyCode == 193 ||
+              e.keyCode == 191 ||
+              e.keyCode == 188 ||
+              e.keyCode == 221 ||
+              e.keyCode == 220 ||
+              e.keyCode == 187 ||
+              e.keyCode == 109 ||
+              e.keyCode == 189 ||
+              e.keyCode == 48 ||
+              e.keyCode == 106 ||
+              e.keyCode == 107 ||
+              e.keyCode == 111 ||
+              e.keyCode == 49 ||
+              e.keyCode == 50 ||
+              e.keyCode == 51 ||
+              e.keyCode == 52 ||
+              e.keyCode == 53 ||
+              e.keyCode == 54 ||
+              e.keyCode == 55 ||
+              e.keyCode == 56 ||
+              e.keyCode == 57 ||
+              e.keyCode == 58 ||
+              e.keyCode == 59 ||
+              e.keyCode == 60 ||
+              e.keyCode == 192 
+              ){
+              e.preventDefault()
+          }else if(
+                    e.key == 32 || 
+                    e.keyCode == 8){
+          }
+        }
 
     const capitaLizer  = (str)=>{
         const teste = str.toLowerCase().replace(/(?:^|\s)\S/g,(e)=>{
@@ -94,6 +106,10 @@ const GlobalContext = ({children}) => {
             "(99)-99999-9999"
         ])
         setTelefone(maskValue);
+     }
+
+     const onChangeSearch = (e)=>{
+       setSearchUsers(e.target.value)
      }
 
     useEffect(()=>{
@@ -149,6 +165,11 @@ const GlobalContext = ({children}) => {
        dataUsers,
        handlerDarkMode,
        menu,
+       pagesUsers,
+       setSearchUsers,
+       onChangeSearch,
+       currenItenUsers,
+       currentPage,
        login,
        dataUsers,
        handlerScrollTop,
