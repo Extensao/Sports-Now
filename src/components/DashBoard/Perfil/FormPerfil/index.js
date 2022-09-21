@@ -3,8 +3,8 @@ import React, { useContext, useState } from 'react'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GlobalProvider } from '../../../../../context/globalContext';
-import { FormPerfilUser } from '../../../../../utils/database/post/formPerfilUser';
-import { UpdatePerfilUser } from '../../../../../utils/database/put/putPerfil/updatePerfilUser';
+import { FormPerfilUser } from '../../../../../utils/database/post/user/formUser';
+import { CriarPermissao } from '../../../../../utils/database/post/permissao/perfil';
 
  
  const FormPerfil = () => {
@@ -132,7 +132,11 @@ import { UpdatePerfilUser } from '../../../../../utils/database/put/putPerfil/up
             w={'100%'}
             maxW={'700px'}
             onClick={()=>{
-              FormPerfilUser(login?.displayName,login?.email,telefone,nickName,login.photoURL)
+              FormPerfilUser(login?.displayName,login?.email,telefone,nickName,login.photoURL);
+              CriarPermissao(login?.email)
+              setTimeout(()=>{
+                window.location.href = '/dashboard/perfil/'
+              },6000)
               valideteForm();
             }}
             >

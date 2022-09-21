@@ -17,7 +17,7 @@ const Navegation = () => {
                 <Flex
                  key={index}
                  mt={'2rem'}
-                 bg={'blue'}
+                 bg={'#ccc'}
                  p={'.25rem'}
                  py={'.5rem'}
                  borderRadius={'5px'}

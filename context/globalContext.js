@@ -3,8 +3,11 @@ import { auth } from "../config/firebase";
 import { createContext, useEffect, useState } from "react";
 import { mask, unMask } from 'remask';
 import { toast } from 'react-toastify';
-import { GetEvento } from "../utils/database/get/evento";
-import { GetUser } from "../utils/database/get/user";
+import { InclusaoIdUser, UpdatePermissao } from "../utils/database/put/permissao/inclusaoIdUser";
+import { GetAllUser } from '../utils/database/get/user/all';
+import { GetAllEvento } from '../utils/database/get/evento/all'
+import { GetAllPermissao } from '../utils/database/get/permissao/all'
+import { AtivoLoginUser } from "../utils/database/put/statusLoginUser/ativarLoginUser";
 
 const GlobalProvider = createContext({});
 
@@ -15,6 +18,8 @@ const GlobalContext = ({children}) => {
 
     const [dataEventos,setDataEventos] = useState([]);
 
+    const [dataPermissoes,setDataPermissoes] = useState([]);
+    
     const [darkMode,setDarkMode] = useState(false);
 
     const handlerDarkMode = () => setDarkMode(!darkMode);
@@ -43,9 +48,7 @@ const GlobalContext = ({children}) => {
       const startIndexUsers = currentPage * itensPage;
       const endIndexUsers = startIndexUsers + itensPage;
       const currenItenUsers = dataUsers.slice(startIndexUsers,endIndexUsers);
-     
-
-      console.log(currenItenUsers)
+    
       const limiteNumber = (e) =>{
           if(
               e.key == '0' ||
@@ -152,13 +155,44 @@ const GlobalContext = ({children}) => {
           } 
   }
 
+  const [uId,setUid] = useState("");
+  
+  const [pUid,setPuId] = useState("");
+
+  
   useEffect(()=>{
-    GetUser(setDataUsers);
+    GetAllUser(setDataUsers);
   },[])
 
     useEffect(()=>{
-      GetEvento(setDataEventos);
+      GetAllEvento(setDataEventos);
   },[])
+
+
+  useEffect(()=>{
+    GetAllPermissao(setDataPermissoes);
+  },[])
+
+  useEffect(()=>{
+    dataUsers.map((u)=>{
+      if(u.email == login?.email){
+        setUid(u?.id_user)
+      }
+    })
+  })
+
+  useEffect(()=>{
+    dataPermissoes.map((u)=>{
+        setPuId(u?.id_user)
+    })
+  })
+
+  useEffect(()=>{
+    setTimeout(()=>{
+    if(login != null && !dataPermissoes.map(e => e.email).includes(login?.email)) InclusaoIdUser(uId,login?.email)
+    },2000)
+  })
+
 
     let values = {
        darkMode,
@@ -171,6 +205,8 @@ const GlobalContext = ({children}) => {
        currenItenUsers,
        currentPage,
        login,
+       uId,
+       pUid,
        dataUsers,
        handlerScrollTop,
        handlerMenu,

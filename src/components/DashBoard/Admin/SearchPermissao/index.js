@@ -24,6 +24,7 @@ const SearchPermissao = () => {
       />
       <InputRightElement
       cursor={'pointer'}
+      zIndex={0}
       >
       <MdOutlineSearch/>
       </InputRightElement>

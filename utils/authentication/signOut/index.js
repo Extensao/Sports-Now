@@ -1,6 +1,5 @@
 import { signOut } from "firebase/auth"
 import { auth } from "../../../config/firebase"
-import DesativoUser from '../../database/put/putStatus/DesativoUser'
 
 const handlerDesconectGoogle = async() =>{
   await signOut(auth)

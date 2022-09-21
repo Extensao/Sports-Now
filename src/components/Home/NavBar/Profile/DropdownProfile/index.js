@@ -5,8 +5,8 @@ import {GoSignOut,GoSignIn} from 'react-icons/go';
 import { GlobalProvider } from "../../../../../../context/globalContext";
 import { handlerConnectGoogle } from "../../../../../../utils/authentication/signIn";
 import { handlerDesconectGoogle } from "../../../../../../utils/authentication/signOut";
-import { DesativoUser } from "../../../../../../utils/database/put/putStatus/DesativoUser";
-import { AtivoUser } from "../../../../../../utils/database/put/putStatus/AtivoUser";
+import { DesativarLoginUser } from "../../../../../../utils/database/put/statusLoginUser/desativarLoginUser";
+import { AtivarLoginUser } from "../../../../../../utils/database/put/statusLoginUser/ativarLoginUser";
 
 const DropdownProfile = () =>{
 
@@ -17,10 +17,10 @@ const DropdownProfile = () =>{
 
     useEffect(()=>{
         setTimeout(()=>{
-            if(login != null && dataUsers.length > 1) AtivoUser(login.email)
+            if(login != null && dataUsers.length > 1) AtivarLoginUser(login.email)
         },1000)
-    })
-
+      })
+    
 return(
     <>
    <MenuList>
@@ -49,11 +49,11 @@ return(
         </Link>
         <MenuItem
         onClick={()=>{
-             DesativoUser(login.email);
+            DesativarLoginUser(login.email);
               setTimeout(()=>{
                 handlerDesconectGoogle();
               },1000)
-            }
+             }
         }
         >
          <GoSignOut/> <Text ml={'.5rem'}>Sair</Text>
