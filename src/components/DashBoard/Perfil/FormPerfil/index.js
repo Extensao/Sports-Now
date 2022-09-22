@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { GlobalProvider } from '../../../../../context/globalContext';
 import { FormPerfilUser } from '../../../../../utils/database/post/user/formUser';
 import { CriarPermissao } from '../../../../../utils/database/post/permissao/perfil';
+import { UpdateUser } from '../../../../../utils/database/put/user';
 
  
  const FormPerfil = () => {
@@ -18,7 +19,8 @@ import { CriarPermissao } from '../../../../../utils/database/post/permissao/per
     valideteForm,
     capitaLizer,
     limiteNumber,
-    dataUsers
+    dataUsers,
+    uId
   } = useContext(GlobalProvider);
 
 
@@ -120,7 +122,7 @@ import { CriarPermissao } from '../../../../../utils/database/post/permissao/per
             disabled={activeEditeTelefone == true && activeEditeNickName == true ? false : true}
             maxW={'700px'}
             onClick={()=>{
-              UpdatePerfilUser(nickName,telefone,login?.email)
+              UpdateUser(nickName,telefone,uId)
               valideteForm();
             }}
             >

@@ -8,7 +8,7 @@ const InclusaoIdUser = (uId,email) =>{
         Email : email
     })
     .then((res)=>{
-        // console.log("Deu tudo certo",res)
+        console.log("Deu tudo certo")
     })
     .catch((err)=>{
        console.log(err)
