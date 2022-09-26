@@ -1,14 +1,14 @@
 import React from 'react'
-import { connection } from '../../../../../../config/mySql'
+import { connection } from '../../../../../../config/mySql';
 
-const getEvento = async (req, res) => {
 
+const getLocaliddes = async (req, res) => {
 
   if (req.method === 'GET') {
 
     const promisePool = connection.promise();
 
-    const sql = 'SELECT * FROM tb_evento';
+    const sql = 'SELECT * FROM tb_localidade';
 
     await promisePool.query(sql)
       .then(([rows]) =>{
@@ -18,7 +18,6 @@ const getEvento = async (req, res) => {
       })
 
   }
-
 }
 
-export default getEvento
+export default getLocaliddes

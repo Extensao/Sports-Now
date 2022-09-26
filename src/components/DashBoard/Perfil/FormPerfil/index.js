@@ -13,10 +13,10 @@ import { UpdateUser } from '../../../../../utils/database/put/user';
   const {
     nickName,
     telefone,
-    setNickName,
     login,
+    onChangeNickName,
     onChangeTelefone,
-    valideteForm,
+    valideteFormPerfil,
     capitaLizer,
     limiteNumber,
     dataUsers,
@@ -58,9 +58,10 @@ import { UpdateUser } from '../../../../../utils/database/put/user';
                 <Box>
                 <Input
                 type={'text'}
+                maxLength={150}
                 value={activeEditeNickName ? capitaLizer(nickName) : e.nick_name}
                 onClick={handlerActiveEditeNickName}
-                onChange={e=>{setNickName(e.target.value)}}
+                onChange={onChangeNickName}
                 />
               </Box>
               </>
@@ -74,7 +75,7 @@ import { UpdateUser } from '../../../../../utils/database/put/user';
             onKeyDown={(e)=>{
               limiteNumber(e);
             }}
-            onChange={e=>{setNickName(e.target.value)}}
+            onChange={onChangeNickName}
             />
           </Box>
           }
@@ -91,6 +92,7 @@ import { UpdateUser } from '../../../../../utils/database/put/user';
                 <Box>
                 <Input
                 type={'text'}
+                maxLength={15}
                 value={activeEditeTelefone ? telefone : e.telefone}
                 onClick={handlerActiveEditeTelefone}
                 onChange={onChangeTelefone}
@@ -123,7 +125,7 @@ import { UpdateUser } from '../../../../../utils/database/put/user';
             maxW={'700px'}
             onClick={()=>{
               UpdateUser(nickName,telefone,uId)
-              valideteForm();
+              valideteFormPerfil();
             }}
             >
               Editar
@@ -139,7 +141,7 @@ import { UpdateUser } from '../../../../../utils/database/put/user';
               setTimeout(()=>{
                 window.location.href = '/dashboard/perfil/'
               },6000)
-              valideteForm();
+              valideteFormPerfil();
             }}
             >
               Salvar

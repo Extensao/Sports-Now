@@ -8,7 +8,9 @@ const getUsers = async (req, res) => {
 
     const promisePool = connection.promise();
 
-   await promisePool.query('SELECT * FROM tb_user ')
+    const sql = 'SELECT * FROM tb_user';
+
+    await promisePool.query(sql)
       .then(([rows]) =>{
         res.status(200).json(rows)
       }).catch(err=>{

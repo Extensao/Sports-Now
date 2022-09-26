@@ -4,6 +4,7 @@ import NavBar from '../SideBar/Desktop/NavBar'
 import SideBarMobile from '../SideBar/Mobile'
 import SideBar from '../SideBar/Desktop'
 import { GlobalProvider } from '../../../../context/globalContext'
+import FormEvento from './FormEvento'
 
 const CriarEventoContent = () => {
   
@@ -25,7 +26,7 @@ const CriarEventoContent = () => {
           bg={'red'}
           ml={'auto'}
           >
-            Criar Evento
+            <FormEvento/>
           </Box>
        </Box>
         
@@ -38,8 +39,9 @@ const CriarEventoContent = () => {
             minH={'calc(100vh - 70px)'}
             p={'.5rem'}
             bg={'red'}
+            px={'1rem'}
             >
-              Área de criar evento para mobile
+                <FormEvento/>
             </Box>
         </Box> 
     </>

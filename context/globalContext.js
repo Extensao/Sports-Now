@@ -20,6 +20,8 @@ const GlobalContext = ({children}) => {
 
     const [dataPermissoes,setDataPermissoes] = useState([]);
     
+    const [capCep,setCapCep] = useState([]);
+
     const [darkMode,setDarkMode] = useState(false);
 
     const handlerDarkMode = () => setDarkMode(!darkMode);
@@ -33,22 +35,81 @@ const GlobalContext = ({children}) => {
 
     const [searchUsers,setSearchUsers] = useState("");
 
+    const [informacaoHidden,setInformacaoHidden] = useState();
+
+    const [localidadeHidden,setLocalidadeHidden] = useState();
+
+    const handlerInformacao = () => setInformacaoHidden(!informacaoHidden);
+
+    const handlerLocalidade = () => setLocalidadeHidden(!localidadeHidden);
+
     // State para Perfil
 
     const [nickName,setNickName] = useState("");
 
+    const onChangeNickName = (e) =>{
+      setNickName(e.target.value)
+    }
+
     const [telefone,setTelefone] = useState("");
+
+    const onChangeTelefone = (e)=>{
+      const originalValue = unMask(e.target.value);
+      const maskValue = mask(originalValue,[
+          "(99)-99999-9999"
+      ])
+      setTelefone(maskValue);
+   }
+
+    // State de paginação para Perfil
 
     const [itensPage,setItensPage] = useState(8);
 
      const [currentPage,setCurrentPage] = useState(0);
-
 
       const pagesUsers = Math.ceil(dataUsers.length / itensPage);
       const startIndexUsers = currentPage * itensPage;
       const endIndexUsers = startIndexUsers + itensPage;
       const currenItenUsers = dataUsers.slice(startIndexUsers,endIndexUsers);
     
+
+      const [img,setImg] = useState({});
+
+      const onChangeImg = (e) =>{
+        setImg(e.target.files[0]);
+      }
+
+      const [titulo,setTitulo] = useState("");
+
+      const onChangeTitulo = (e) =>{
+        setTitulo(e.target.value);
+      }
+      
+      const [descricao,setDescricao] = useState("");
+
+      const onChangeDescricao = (e) =>{
+        setDescricao(e.target.value);
+      }
+
+
+      const [logradouro,setLogradouro] = useState("");
+
+      const onChangeLogradouro = (e) =>{
+        setLogradouro(e.target.value);
+      }
+
+      const [bairro,setBairro] = useState("");
+
+      const onChangeBairro = (e) =>{
+        setBairro(e.target.value);
+      }
+
+      const [localidade,setLocalidade] = useState("");
+
+      const onChangeLocalidade = (e) =>{
+        setLocalidade(e.target.value);
+      }
+
       const limiteNumber = (e) =>{
           if(
               e.key == '0' ||
@@ -103,14 +164,6 @@ const GlobalContext = ({children}) => {
       return teste;
     }
 
-    const onChangeTelefone = (e)=>{
-        const originalValue = unMask(e.target.value);
-        const maskValue = mask(originalValue,[
-            "(99)-99999-9999"
-        ])
-        setTelefone(maskValue);
-     }
-
      const onChangeSearch = (e)=>{
        setSearchUsers(e.target.value)
      }
@@ -129,7 +182,7 @@ const GlobalContext = ({children}) => {
         })
     }
 
-    const valideteForm = ()=>{
+    const valideteFormPerfil = ()=>{
 
         if ( nickName != "" && 
              telefone != "")
@@ -153,6 +206,15 @@ const GlobalContext = ({children}) => {
           {
             toast.warning("Preencha o campo de telefone");
           } 
+  }
+
+  
+  const validarSearchCep = () =>{
+    if(capCep.cep != "" ){
+      toast.success("Sucesso na pesquisa por pelo o seu cep!");
+    }else{
+      toast.warning("Não foi possível encontrar o seu cep, tente novamente :)");
+    }
   }
 
   const [uId,setUid] = useState("");
@@ -211,12 +273,28 @@ const GlobalContext = ({children}) => {
        handlerScrollTop,
        handlerMenu,
        capitaLizer,
-       setNickName,
+       onChangeNickName,
        onChangeTelefone,
+       onChangeImg,
+       onChangeTitulo,
+       onChangeDescricao,
+       onChangeLogradouro,
+       onChangeBairro,
+       onChangeLocalidade,
+       logradouro,
+       bairro,
+       localidade,
+       img,
+       titulo,
+       descricao,
        nickName,
        telefone,
-       valideteForm,
-       limiteNumber
+       valideteFormPerfil,
+       limiteNumber,
+       handlerInformacao,
+       handlerLocalidade,
+       informacaoHidden,
+       localidadeHidden
     }
 
     return (

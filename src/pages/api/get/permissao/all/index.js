@@ -8,7 +8,9 @@ const getPermissao = async (req, res) => {
 
         const promisePool = connection.promise();
   
-       await promisePool.query('SELECT * FROM tb_permissao p')
+        const sql = 'SELECT * FROM tb_permissao';
+
+       await promisePool.query(sql)
           .then(([rows]) =>{
             res.status(200).json(rows)
           }).catch(err=>{

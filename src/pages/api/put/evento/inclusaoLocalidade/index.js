@@ -1,21 +1,21 @@
 import React from 'react'
 import { connection } from '../../../../../../config/mySql';
 
-const handlerpInclusaoIdUser = async (req, res) => {
+const handlerpInclusaoIdLocalidade = async (req, res) => {
 
     if (req.method === 'PUT') {
 
         const promisePool = connection.promise();
         
-        var {UiD,Email} = req.body;
+        var {LiD,Email} = req.body;
 
         const sql = `
-                        UPDATE tb_permissao p SET p.id_user = ? 
+                        UPDATE tb_evento e SET e.id_localidade = ? 
                         WHERE p.email = ? 
                     `;
 
        await promisePool.query(sql,
-       [UiD,Email])
+       [LiD,Email])
           .then(([rows]) =>{
             res.status(200).json(rows)
           }).catch(err=>{
@@ -26,4 +26,4 @@ const handlerpInclusaoIdUser = async (req, res) => {
 
 }
 
-export default handlerpInclusaoIdUser
+export default handlerpInclusaoIdLocalidade
