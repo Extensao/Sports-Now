@@ -1,16 +1,17 @@
 import { Box, FormLabel, Input, Textarea } from '@chakra-ui/react'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { storage } from '../../../../../../config/firebase';
 import { GlobalProvider } from '../../../../../../context/globalContext';
 
 const InformacaoEvento = () => {
 
     const {
-        onChangeImg,
+        setImg,
         onChangeTitulo,
         onChangeDescricao,
         informacaoHidden
     } = useContext(GlobalProvider);
-
+    
     return (
         <>
         <Box
@@ -35,7 +36,7 @@ const InformacaoEvento = () => {
                         id={'imagem'}
                         display={'none'}
                         type={'file'}
-                        onChange={onChangeImg}
+                        onChange={(e) => {setImg(e.target.files[0])}}
                     />
                 </Box>
             </Box>

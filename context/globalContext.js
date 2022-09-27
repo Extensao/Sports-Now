@@ -75,9 +75,6 @@ const GlobalContext = ({children}) => {
 
       const [img,setImg] = useState({});
 
-      const onChangeImg = (e) =>{
-        setImg(e.target.files[0]);
-      }
 
       const [titulo,setTitulo] = useState("");
 
@@ -208,14 +205,43 @@ const GlobalContext = ({children}) => {
           } 
   }
 
-  
-  const validarSearchCep = () =>{
-    if(capCep.cep != "" ){
-      toast.success("Sucesso na pesquisa por pelo o seu cep!");
+  const valideteFormEvento = () =>{
+    if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" ){
+      toast.success("Sucesso no seu cadastro!");
+    }
+    else if(img.type !== "image/png" || img.type !== "image/jpg" ){
+      toast.warning("Insirá uma imagem valida do tipo .png ou .jpg");
+    }else if(titulo != "" && descricao != "" && logradouro == "" && bairro == "" && localidade == ""){
+      toast.warning("Preencha o campos de endereço, bairro e localidade");
+    }else if(titulo != "" && descricao != "" && logradouro != "" && bairro == "" && localidade == ""){
+      toast.warning("Preencha o campos de bairro e localidade");
+    }else if(descricao != "" && logradouro == "" && bairro == "" && localidade == ""){
+      toast.warning("Preencha o campos de endereço, bairro e localidade");
+    }else if(titulo == ""){
+      toast.warning("Preencha o campos de titulo");
+    }
+    else if(descricao == ""){
+      toast.warning("Preencha o campos de descrição");
+    }
+    else if(logradouro == ""){
+      toast.warning("Preencha o campos de endereço");
+    }
+    else if(bairro == ""){
+      toast.warning("Preencha o campos de bairro");
+    }
+    else if(localidade == ""){
+      toast.warning("Preencha o campos de localidade");
     }else{
-      toast.warning("Não foi possível encontrar o seu cep, tente novamente :)");
+      toast.warning("Preencha todos os campos de titulo, desccrição, endereço, bairro e localidade");
     }
   }
+
+  
+  // const validarSearchCep = () =>{
+  //   if(img.type !== "image/png" || img.type !== "image/jpg" ){
+  //     toast.warning("Insirá uma imagem valida do tipo .png ou .jpg");
+  //   }
+  // }
 
   const [uId,setUid] = useState("");
   
@@ -249,12 +275,8 @@ const GlobalContext = ({children}) => {
     })
   })
 
-  useEffect(()=>{
-    setTimeout(()=>{
-    if(login != null && !dataPermissoes.map(e => e.email).includes(login?.email)) InclusaoIdUser(uId,login?.email)
-    },2000)
-  })
 
+  
 
     let values = {
        darkMode,
@@ -275,7 +297,7 @@ const GlobalContext = ({children}) => {
        capitaLizer,
        onChangeNickName,
        onChangeTelefone,
-       onChangeImg,
+       setImg,
        onChangeTitulo,
        onChangeDescricao,
        onChangeLogradouro,
@@ -294,7 +316,8 @@ const GlobalContext = ({children}) => {
        handlerInformacao,
        handlerLocalidade,
        informacaoHidden,
-       localidadeHidden
+       localidadeHidden,
+       valideteFormEvento
     }
 
     return (

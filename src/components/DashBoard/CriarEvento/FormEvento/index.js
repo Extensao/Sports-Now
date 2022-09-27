@@ -5,6 +5,9 @@ import InformacaoEvento from "./InformacaoEvento";
 import LocalidadeEvento from "./LocalidadeEvento";
 import {FiChevronDown} from  "react-icons/fi";
 import { FormEventoCriar } from "../../../../../utils/database/post/evento";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const FormEvento = () =>{
 
@@ -16,7 +19,7 @@ const FormEvento = () =>{
         logradouro,
         bairro,
         localidade,
-        validarFormEvento,
+        valideteFormEvento,
         handlerInformacao,
         handlerLocalidade,
         informacaoHidden,
@@ -24,7 +27,7 @@ const FormEvento = () =>{
       } = useContext(GlobalProvider);
 
 
-      console.log(titulo)
+      console.log(img)
     return(
         <>
            <FormControl
@@ -120,14 +123,15 @@ const FormEvento = () =>{
                 w={'100%'}
                 maxW={'700px'}
                 onClick={()=>{      
-                    FormEventoCriar( titulo, descricao, logradouro, bairro, localidade, uId )
+                    FormEventoCriar( titulo, descricao, logradouro, bairro, localidade, uId, img );
+                    valideteFormEvento();
                 }}
                 >
                     Salvar
                 </Button>
              </Flex>
            </FormControl>
-      
+           <ToastContainer/>
         </>
     )
 }

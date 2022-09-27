@@ -3,13 +3,13 @@ import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCItR_GLwY6Zi0ZjNK3-FICnj-QIrfdpjc",
-    authDomain: "extensao-projeto.firebaseapp.com",
-    projectId: "extensao-projeto",
-    storageBucket: "extensao-projeto.appspot.com",
-    messagingSenderId: "252155497568",
-    appId: "1:252155497568:web:31e6d5d662a6f5b975c705",
-    measurementId: "G-Z2VS6DL9XE"
+  apiKey: "AIzaSyAeMaknbmSF9FC6jth5xJKSomkK9Q_ek_c",
+  authDomain: "sports-now-359922.firebaseapp.com",
+  projectId: "sports-now-359922",
+  storageBucket: "sports-now-359922.appspot.com",
+  messagingSenderId: "603330374454",
+  appId: "1:603330374454:web:f844649e3bd14f60626197",
+  measurementId: "G-MR8291K9C4"
   };
   
   const app = initializeApp(firebaseConfig);
@@ -18,4 +18,4 @@ const firebaseConfig = {
 
   const auth = getAuth(app)
 
-  export { storage, auth }
+  export { storage,auth }

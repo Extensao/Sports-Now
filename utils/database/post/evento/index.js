@@ -1,6 +1,8 @@
 import axios from "axios";
+import { getDownloadURL, ref,  uploadBytesResumable } from "firebase/storage";
+import { storage } from "../../../../config/firebase";
 
-const FormEventoCriar = ( titulo, descricao, logradouro, bairro, localidade, uId) =>{
+const FormEventoCriar = async ( titulo, descricao, logradouro, bairro, localidade, uId, img ) =>{
 
     var dateCreate = new Date();
 
@@ -10,26 +12,28 @@ const FormEventoCriar = ( titulo, descricao, logradouro, bairro, localidade, uId
     var hora = dateCreate.getHours();
     var minuto = dateCreate.getMinutes();
 
-        axios.post("/api/post/evento/criarEvento/",
-        {
-            Titulo: titulo,
-            Descricao: descricao,
-            Dia: dia,
-            Mes: mes,
-            Ano: ano,
-            Hora: hora,
-            Minuto: minuto,
-            Logradouro: logradouro,
-            Bairro: bairro,
-            Localidade: localidade,
-            UiD: uId
-        })
-        .then((res)=>{
-           console.log("Sucesso das informações do evento")
-        })
-        .catch((err)=>{
-           console.log(err)
-        });
+    const storageRef = ref(storage, 'images/' + img?.name);
+    const uploadTask = uploadBytesResumable(storageRef, img);
+
+    if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != ""){
+            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                axios.post("/api/post/evento/criarEvento/",
+                {
+                    Titulo: titulo,
+                    Descricao: descricao,
+                    Dia: dia,
+                    Mes: mes,
+                    Ano: ano,
+                    Hora: hora,
+                    Minuto: minuto,
+                    Logradouro: logradouro,
+                    Bairro: bairro,
+                    Localidade: localidade,
+                    UiD: uId,
+                    UrlImg: downloadURL
+                })
+            });
+    }
 }
 
 export {FormEventoCriar};
