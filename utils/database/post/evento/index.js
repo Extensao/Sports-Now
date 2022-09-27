@@ -15,7 +15,6 @@ const FormEventoCriar = async ( titulo, descricao, logradouro, bairro, localidad
     const storageRef = ref(storage, 'images/' + img?.name);
     const uploadTask = uploadBytesResumable(storageRef, img);
 
-    if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != ""){
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                 axios.post("/api/post/evento/criarEvento/",
                 {
@@ -33,7 +32,6 @@ const FormEventoCriar = async ( titulo, descricao, logradouro, bairro, localidad
                     UrlImg: downloadURL
                 })
             });
-    }
 }
 
 export {FormEventoCriar};

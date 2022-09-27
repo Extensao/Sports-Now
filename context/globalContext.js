@@ -205,34 +205,69 @@ const GlobalContext = ({children}) => {
           } 
   }
 
+
   const valideteFormEvento = () =>{
-    if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" ){
-      toast.success("Sucesso no seu cadastro!");
-    }
-    else if(img.type !== "image/png" || img.type !== "image/jpg" ){
-      toast.warning("Insirá uma imagem valida do tipo .png ou .jpg");
-    }else if(titulo != "" && descricao != "" && logradouro == "" && bairro == "" && localidade == ""){
-      toast.warning("Preencha o campos de endereço, bairro e localidade");
-    }else if(titulo != "" && descricao != "" && logradouro != "" && bairro == "" && localidade == ""){
-      toast.warning("Preencha o campos de bairro e localidade");
-    }else if(descricao != "" && logradouro == "" && bairro == "" && localidade == ""){
-      toast.warning("Preencha o campos de endereço, bairro e localidade");
-    }else if(titulo == ""){
+    if(img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro != "" && localidade != ""){
       toast.warning("Preencha o campos de titulo");
-    }
-    else if(descricao == ""){
+    }else if(img != "" &&  descricao == "" && titulo != "" && logradouro != "" && bairro != "" && localidade != ""){
       toast.warning("Preencha o campos de descrição");
-    }
-    else if(logradouro == ""){
+    }else if(img != "" &&  logradouro == "" && titulo != "" && descricao != "" && bairro != "" && localidade != ""){
       toast.warning("Preencha o campos de endereço");
-    }
-    else if(bairro == ""){
+    }else if(img != "" && bairro == ""  && titulo != "" && descricao != "" && logradouro != "" && localidade != ""){
       toast.warning("Preencha o campos de bairro");
-    }
-    else if(localidade == ""){
+    }else if(img != "" &&  localidade == "" && titulo != "" && descricao != "" && logradouro != "" && bairro != ""){
       toast.warning("Preencha o campos de localidade");
-    }else{
-      toast.warning("Preencha todos os campos de titulo, desccrição, endereço, bairro e localidade");
+    }else if(img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro == "" && localidade == ""){
+      toast.warning("Preencha o campos de titulo, descricao, endereço, bairro e  localidade");
+    }else if(img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro == "" && localidade == ""){
+      toast.warning("Preencha o campos de descricao, endereço, bairro e  localidade");
+    }else if(img != "" && titulo != "" && descricao != "" && logradouro == "" && bairro == "" && localidade == ""){
+      toast.warning("Preencha o campos de endereço, bairro e  localidade");
+    }else if(img != "" && titulo != "" && descricao != "" && logradouro != "" && bairro == "" && localidade == ""){
+      toast.warning("Preencha o campos de bairro e  localidade");
+    }else if(img != "" && titulo == "" && descricao == "" && logradouro != "" && bairro != "" && localidade != ""){
+      toast.warning("Preencha o campos de titulo e descrição");
+    }else if(img != "" && titulo == "" && descricao != "" && logradouro == "" && bairro != "" && localidade != ""){
+      toast.warning("Preencha o campos de titulo e endereço");
+    }else if(img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro == "" && localidade != ""){
+      toast.warning("Preencha o campos de titulo e bairro");
+    }else if(img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro != "" && localidade == ""){
+      toast.warning("Preencha o campos de titulo e localidade");
+    }else if(img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro != "" && localidade != ""){
+      toast.warning("Preencha o campos de descrição e endereço");
+    }else if(img != "" && titulo != "" && descricao == "" && logradouro != "" && bairro == "" && localidade != ""){
+      toast.warning("Preencha o campos de descrição e bairro");
+    }else if(img != "" && titulo != "" && descricao == "" && logradouro != "" && bairro != "" && localidade == ""){
+      toast.warning("Preencha o campos de descrição e localidade");
+    }else if(img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro == "" && localidade != ""){
+      toast.warning("Preencha o campos de descrição, endereço e bairro");
+    }else if(img != "" && titulo != "" && descricao != "" && logradouro != "" && bairro == "" && localidade != ""){
+      toast.warning("Preencha o campos de bairro e localidade");
+    }else if(img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro == "" && localidade != ""){
+      toast.warning("Preencha o campos de titulo, descrição, endereço e bairro");
+    }else if(img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro != "" && localidade != ""){
+      toast.warning("Preencha o campos de titulo, descrição e endereço");
+    }else if(img != "" && titulo != "" && descricao !== "" && logradouro == "" && bairro != "" && localidade == ""){
+      toast.warning("Preencha o campos de endereço e localidade");
+    }else if(img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro != "" && localidade == ""){
+      toast.warning("Preencha o campos de decrição, endereço e localidade");
+    }else if(img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro != "" && localidade == ""){
+      toast.warning("Preencha o campos de titulo, decrição, endereço e localidade");
+    }else if(img != "" && titulo != "" && descricao != "" && logradouro == "" && bairro == "" && localidade != ""){
+      toast.warning("Preencha o campos de endereço e bairro");
+    }else if(img != "" && titulo != "" && descricao == "" && logradouro != "" && bairro == "" && localidade == ""){
+      toast.warning("Preencha o campos de descrição, bairro e localiadade");
+    }else if(img != "" && titulo == "" && descricao != "" && logradouro == "" && bairro == "" && localidade != ""){
+      toast.warning("Preencha o campos de titulo, endereço e bairro");
+    }else if(img != "" && titulo == "" && descricao != "" && logradouro == "" && bairro != "" && localidade == ""){
+      toast.warning("Preencha o campos de titulo, endereço e localidade");
+    }else if(img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro == "" && localidade == ""){
+      toast.warning("Preencha o campos de titulo, bairro e localidade");
+    }else if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img.type != "image/png" && img.type != "image/jpg"){
+      toast.warning("Insira uma imagem valida que seja com extensão .png ou .jpg");
+    }
+    else {
+      toast.success("Sucesso no seu cadastro!");
     }
   }
 

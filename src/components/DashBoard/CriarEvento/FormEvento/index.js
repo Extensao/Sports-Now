@@ -26,8 +26,6 @@ const FormEvento = () =>{
         localidadeHidden
       } = useContext(GlobalProvider);
 
-
-      console.log(img)
     return(
         <>
            <FormControl
@@ -122,8 +120,10 @@ const FormEvento = () =>{
                 type={'submit'}
                 w={'100%'}
                 maxW={'700px'}
-                onClick={()=>{      
-                    FormEventoCriar( titulo, descricao, logradouro, bairro, localidade, uId, img );
+                onClick={()=>{     
+                    if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img != "" && img.type == "image/png" || img.type == "image/jpg"){ 
+                         FormEventoCriar( titulo, descricao, logradouro, bairro, localidade, uId, img );
+                    }
                     valideteFormEvento();
                 }}
                 >
