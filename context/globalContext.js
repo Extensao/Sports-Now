@@ -294,7 +294,7 @@ const GlobalContext = ({children}) => {
       toast.warning("Preencha o campos de titulo, endereço e localidade");
     }else if(img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro == "" && localidade == ""){
       toast.warning("Preencha o campos de titulo, bairro e localidade");
-    }else if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img.type != "image/png" && img.type != "image/jpg"){
+    }else if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img?.type != "image/png" && img?.type != "image/jpg"){
       toast.warning("Insira uma imagem valida que seja com extensão .png ou .jpg");
     }
     else {

@@ -121,7 +121,7 @@ const FormEvento = () =>{
                 w={'100%'}
                 maxW={'700px'}
                 onClick={()=>{     
-                    if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img != "" && img.type == "image/png" || img.type == "image/jpg"){ 
+                    if(titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img != "" && img?.type == "image/png" || img?.type == "image/jpg"){ 
                          FormEventoCriar( titulo, descricao, logradouro, bairro, localidade, uId, img );
                     }
                     valideteFormEvento();
