@@ -19,8 +19,6 @@ const GlobalContext = ({children}) => {
     const [dataEventos,setDataEventos] = useState([]);
 
     const [dataPermissoes,setDataPermissoes] = useState([]);
-    
-    const [capCep,setCapCep] = useState([]);
 
     const [darkMode,setDarkMode] = useState(false);
 
@@ -35,6 +33,10 @@ const GlobalContext = ({children}) => {
 
     const [searchUsers,setSearchUsers] = useState("");
 
+    const [searchEventosAll,setSearchEventosAll] = useState("");
+
+    const [searchEventosDesativadoAll,setSearchEventosDesativadoAll] = useState("");
+   
     const [informacaoHidden,setInformacaoHidden] = useState();
 
     const [localidadeHidden,setLocalidadeHidden] = useState();
@@ -63,18 +65,41 @@ const GlobalContext = ({children}) => {
 
     // State de paginação para Perfil
 
-    const [itensPage,setItensPage] = useState(8);
+    const [itensPageUser,setItensPageUser] = useState(10);
 
-     const [currentPage,setCurrentPage] = useState(0);
+    const [currentPageUser,setCurrentPageUser] = useState(0);
 
-      const pagesUsers = Math.ceil(dataUsers.length / itensPage);
-      const startIndexUsers = currentPage * itensPage;
-      const endIndexUsers = startIndexUsers + itensPage;
-      const currenItenUsers = dataUsers.slice(startIndexUsers,endIndexUsers);
-    
+    const pagesUsers = Math.ceil(dataUsers.length / itensPageUser);
+    const startIndexUsers = currentPageUser * itensPageUser;
+    const endIndexUsers = startIndexUsers + itensPageUser;
+    const currenItenUsers = dataUsers.slice(startIndexUsers,endIndexUsers);
 
-      const [img,setImg] = useState({});
+    // State de paginação para Evento
 
+    const [itensPageEvento,setItensPageEvento] = useState(10);
+
+    const [currentPageEvento,setCurrentPageEvento] = useState(0);
+
+
+     const pagesEventos = Math.ceil(dataEventos.filter(e => e?.email == login?.email) .length / itensPageEvento);
+     const startIndexEventos = currentPageEvento * itensPageEvento;
+     const endIndexEventos = startIndexEventos + itensPageEvento;
+     const currenItenEventos = dataEventos?.slice(startIndexEventos,endIndexEventos);
+
+
+  // State de paginação para Evento desativados
+
+  const [itensPageDesativadoEvento,setItensPageDesativadoEvento] = useState(10);
+
+  const [currentPageDesativadoEvento,setCurrentPageDesativadoEvento] = useState(0);
+
+
+   const pagesDesativadoEventos = Math.ceil(dataEventos.filter(e => e?.email == login?.email).length / itensPageDesativadoEvento);
+   const startIndexDesativadoEventos = currentPageEvento * itensPageDesativadoEvento;
+   const endIndexDesativadoEventos = startIndexDesativadoEventos + itensPageDesativadoEvento;
+   const currenItenDesativadoEventos = dataEventos?.slice(startIndexDesativadoEventos,endIndexDesativadoEventos);
+
+     const [img,setImg] = useState({});
 
       const [titulo,setTitulo] = useState("");
 
@@ -87,7 +112,6 @@ const GlobalContext = ({children}) => {
       const onChangeDescricao = (e) =>{
         setDescricao(e.target.value);
       }
-
 
       const [logradouro,setLogradouro] = useState("");
 
@@ -165,6 +189,13 @@ const GlobalContext = ({children}) => {
        setSearchUsers(e.target.value)
      }
 
+     const onChangeSearchEventoAll = (e) =>{
+      setSearchEventosAll(e.target.value)
+     }
+
+     const  onChangeSearchEventoDesativadoAll = (e) =>{
+      setSearchEventosDesativadoAll(e.target.value)
+     }
     useEffect(()=>{
         onAuthStateChanged(auth,(at) =>{
             setLogin(at);
@@ -318,15 +349,26 @@ const GlobalContext = ({children}) => {
        dataUsers,
        handlerDarkMode,
        menu,
+       pagesEventos,
        pagesUsers,
+       pagesDesativadoEventos,
        setSearchUsers,
        onChangeSearch,
+       setCurrentPageUser,
+       setCurrentPageEvento,
+       setCurrentPageDesativadoEvento,
+       currentPageUser,
+       currentPageEvento,
+       currentPageDesativadoEvento,
        currenItenUsers,
-       currentPage,
+       currenItenEventos,
+       currenItenDesativadoEventos,
        login,
        uId,
        pUid,
        dataUsers,
+       onChangeSearchEventoAll,
+       onChangeSearchEventoDesativadoAll,
        handlerScrollTop,
        handlerMenu,
        capitaLizer,

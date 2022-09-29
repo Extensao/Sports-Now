@@ -1,16 +1,15 @@
-import { Box, Button, Flex } from '@chakra-ui/react';
+import { Button, Flex } from '@chakra-ui/react';
 import React, { useContext } from 'react'
-import { GlobalProvider } from '../../../../../../context/globalContext';
+import { GlobalProvider } from '../../../../../../../context/globalContext';
 
 const Navegation = () => {
 
   const { 
-    pagesUsers,
-    currentPageUser,
-    setCurrentPageUser
+    pagesDesativadoEventos,
+    currenItenDesativadoEventos,
+    setCurrentPageDesativadoEvento
   } = useContext(GlobalProvider);
 
-  
   return (
     <>
       <Flex
@@ -24,17 +23,17 @@ const Navegation = () => {
         p={'1rem'}
       >
       {
-        Array.from(Array(pagesUsers),
+        Array.from(Array(pagesDesativadoEventos),
         (item,index)=>{
           return(
             <>
                  <Button
                    value={index}
-                   bg={index == currentPageUser ? 'aqua' : 'black'}
+                   bg={index == currenItenDesativadoEventos ? 'aqua' : 'black'}
                    color={'yellow'}
                    mx={'.5rem'}
                    onClick={(e)=>{
-                    setCurrentPageUser(
+                    setCurrentPageDesativadoEvento(
                            Number(e.target.value)
                        )
                    }}

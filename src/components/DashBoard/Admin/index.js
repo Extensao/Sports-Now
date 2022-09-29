@@ -15,7 +15,7 @@ const AdminContent = () => {
 
   return (
     <>
-          <Box
+        <Box
            display={{base:'none',md:'block'}}
         >     
          <SideBar/>

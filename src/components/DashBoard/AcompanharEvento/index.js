@@ -4,6 +4,7 @@ import { GlobalProvider } from '../../../../context/globalContext'
 import NavBar from '../SideBar/Desktop/NavBar'
 import SideBar from '../SideBar/Desktop'
 import SideBarMobile from '../SideBar/Mobile'
+import CardEvento from '../CardEvento'
 
 const AcompanharEventoContent = () => {
 
@@ -25,12 +26,12 @@ const AcompanharEventoContent = () => {
             bg={'red'}
             ml={'auto'}
          >
-            Acompanhar Evento
+            <CardEvento/>
          </Box>
         </Box>
 
         <Box
-              display={{base:'flex',md:'none'}}
+              display={{base:'block',md:'none'}}
         >  
           <SideBarMobile/>
           <Box
@@ -39,7 +40,7 @@ const AcompanharEventoContent = () => {
               p={'.5rem'}
               bg={'red'}
             >
-                Acompanhar Evento
+                 <CardEvento/>
             </Box>
         </Box>
     </>

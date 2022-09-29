@@ -4,6 +4,7 @@ const GetAllEvento = (setDataEventos) =>{
     axios.get("/api/get/evento/all/")
     .then((res)=>{
         setDataEventos(res.data)
+        console.log(res.data)
     })
     .catch((err)=>{
        console.log(err)

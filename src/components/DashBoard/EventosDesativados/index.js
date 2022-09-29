@@ -4,6 +4,7 @@ import NavBar from '../SideBar/Desktop/NavBar'
 import SideBarMobile from '../SideBar/Mobile'
 import SideBar from '../SideBar/Desktop'
 import { GlobalProvider } from '../../../../context/globalContext'
+import CardEventoDesativado from '../CardEvento/Desativado'
 
 const EventoDesativadosContent = () => {
   
@@ -25,7 +26,7 @@ const EventoDesativadosContent = () => {
             bg={'red'}
             ml={'auto'}
           >
-             Eventos Desativar 
+              <CardEventoDesativado/>
           </Box>
        </Box>
         
@@ -39,7 +40,7 @@ const EventoDesativadosContent = () => {
               p={'.5rem'}
               bg={'red'}
             >
-              Área de eventos desativados para mobile
+                <CardEventoDesativado/>
             </Box>
         </Box>
     </>

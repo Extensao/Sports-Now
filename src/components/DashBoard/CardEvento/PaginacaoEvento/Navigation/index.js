@@ -5,12 +5,11 @@ import { GlobalProvider } from '../../../../../../context/globalContext';
 const Navegation = () => {
 
   const { 
-    pagesUsers,
-    currentPageUser,
-    setCurrentPageUser
+    pagesEventos,
+    currentPageEvento,
+    setCurrentPageEvento
   } = useContext(GlobalProvider);
 
-  
   return (
     <>
       <Flex
@@ -24,17 +23,17 @@ const Navegation = () => {
         p={'1rem'}
       >
       {
-        Array.from(Array(pagesUsers),
+        Array.from(Array(pagesEventos),
         (item,index)=>{
           return(
             <>
                  <Button
                    value={index}
-                   bg={index == currentPageUser ? 'aqua' : 'black'}
+                   bg={index == currentPageEvento ? 'aqua' : 'black'}
                    color={'yellow'}
                    mx={'.5rem'}
                    onClick={(e)=>{
-                    setCurrentPageUser(
+                    setCurrentPageEvento(
                            Number(e.target.value)
                        )
                    }}

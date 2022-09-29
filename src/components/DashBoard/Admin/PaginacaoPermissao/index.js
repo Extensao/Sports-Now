@@ -19,11 +19,11 @@ const PaginacaoPermissao = () => {
       w={'100%'}
       >
         {
-            currenItenUsers.map(d =>{
+            currenItenUsers?.map(d =>{
               return(
                 <>
                     <Box
-                    key={d.id}
+                    key={d.id_user}
                     w={'100%'}
                     maxW={{base:'100%',md:'310px',lg:'270px'}}
                     boxShadow={'0 0 10px 0 rgba(0,0,0,.25)'}

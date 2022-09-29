@@ -1,4 +1,3 @@
-import React from 'react'
 import { connection } from '../../../../../../config/mySql'
 
 const getEvento = async (req, res) => {
@@ -8,7 +7,7 @@ const getEvento = async (req, res) => {
 
     const promisePool = connection.promise();
 
-    const sql = 'SELECT * FROM tb_evento';
+    const sql = 'select * from card_evento';
 
     await promisePool.query(sql)
       .then(([rows]) =>{
