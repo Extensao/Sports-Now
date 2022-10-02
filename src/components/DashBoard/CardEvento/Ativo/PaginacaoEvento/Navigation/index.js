@@ -1,6 +1,6 @@
 import { Box, Button, Flex } from '@chakra-ui/react';
 import React, { useContext } from 'react'
-import { GlobalProvider } from '../../../../../../context/globalContext';
+import { GlobalProvider } from '../../../../../../../context/globalContext';
 
 const Navegation = () => {
 

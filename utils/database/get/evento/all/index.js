@@ -1,14 +1,13 @@
-import axios from "axios";
+import axios from 'axios';
 
-const GetAllEvento = (setDataEventos) =>{
-    axios.get("/api/get/evento/all/")
+const GetEventoAll = (setDataEventoAll) => {
+    axios.get('/api/get/evento/all/')
     .then((res)=>{
-        setDataEventos(res.data)
-        console.log(res.data)
+        setDataEventoAll(res.data);
     })
     .catch((err)=>{
        console.log(err)
     });
 }
 
-export {GetAllEvento};
+export {GetEventoAll}

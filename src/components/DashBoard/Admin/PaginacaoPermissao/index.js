@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, Flex, SimpleGrid, Spinner, Text } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { GlobalProvider } from '../../../../../context/globalContext';
 import Navegation from './Navigation';
@@ -11,10 +11,33 @@ const PaginacaoPermissao = () => {
 
   return (
     <>
+    {
+    currenItenUsers == "" ?
+    <>
+      <Flex
+      w={'100%'}
+      minH={'calc(100vh - 70px)'}
+      justify={'center'}
+      align={'center'}
+      >
+        <Spinner
+          thickness='4px'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='blue.500'
+          size='xl'
+        />
+      </Flex>
+      </>
+    :
+    <>
+      <Box
+           minH={'calc(80vh + 1rem)'}
+           mt={'1.5rem'}
+        >
       <SimpleGrid
       columns={{base:1,md:2,lg:3,xl:4}}
       gap={'20px'}
-      mt={'2rem'}
       px={{base:'.5rem',sm:'2rem',md:'0'}}
       w={'100%'}
       >
@@ -72,7 +95,10 @@ const PaginacaoPermissao = () => {
             })
         }
       </SimpleGrid>
+      </Box>
       <Navegation/>
+    </>
+  }
     </>
   )
 }

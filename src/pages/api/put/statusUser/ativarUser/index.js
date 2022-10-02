@@ -2,7 +2,7 @@ import React from 'react'
 import { connection } from '../../../../../../config/mySql';
 
 
-const handlerStatusAtivarUser = async (req, res) => {
+const putStatusAtivarUser = async (req, res) => {
 
     if (req.method === 'PUT') {
 
@@ -28,4 +28,4 @@ const handlerStatusAtivarUser = async (req, res) => {
 
 }
 
-export default handlerStatusAtivarUser
+export default putStatusAtivarUser

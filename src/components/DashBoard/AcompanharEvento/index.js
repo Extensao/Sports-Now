@@ -1,10 +1,10 @@
 import { Box,Flex } from '@chakra-ui/react'
 import React, { useContext } from 'react'
-import { GlobalProvider } from '../../../../context/globalContext'
 import NavBar from '../SideBar/Desktop/NavBar'
 import SideBar from '../SideBar/Desktop'
 import SideBarMobile from '../SideBar/Mobile'
-import CardEvento from '../CardEvento'
+import CardEvento from '../CardEvento/Ativo'
+import { GlobalProvider } from '../../../../context/globalContext'
 
 const AcompanharEventoContent = () => {
 

@@ -15,10 +15,10 @@ const Navegation = () => {
     <>
       <Flex
         w={'100%'}
-        mt={'2rem'}
         direction={'row'}
         justify={'center'}
         align={'center'}
+        mt={'1.5rem'}
         bg={'green'}
         borderRadius={'10px'}
         p={'1rem'}

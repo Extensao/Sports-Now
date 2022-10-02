@@ -1,13 +1,14 @@
-import { connection } from '../../../../../../config/mySql'
+import { connection } from "../../../../../../config/mySql";
 
-const getEvento = async (req, res) => {
+
+const getEventoAll = async (req, res) => {
 
 
   if (req.method === 'GET') {
 
     const promisePool = connection.promise();
 
-    const sql = 'select * from card_evento';
+    const sql = 'SELECT * FROM card_evento';
 
     await promisePool.query(sql)
       .then(([rows]) =>{
@@ -20,4 +21,4 @@ const getEvento = async (req, res) => {
 
 }
 
-export default getEvento
+export default getEventoAll

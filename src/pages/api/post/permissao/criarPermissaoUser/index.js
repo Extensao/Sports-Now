@@ -1,7 +1,7 @@
 import React from 'react'
 import { connection } from '../../../../../../config/mySql'
 
-const handlerCriarPermissao = async (req, res) => {
+const postCriarPermissao = async (req, res) => {
 
     if (req.method === 'POST') {
 
@@ -31,4 +31,4 @@ const handlerCriarPermissao = async (req, res) => {
 
 }
 
-export default handlerCriarPermissao
+export default postCriarPermissao

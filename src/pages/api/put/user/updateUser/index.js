@@ -1,6 +1,6 @@
 import { connection } from "../../../../../../config/mySql";
 
-const UpdateUser =  async (req,res) =>{
+const putUpdateUser =  async (req,res) =>{
     if (req.method === 'PUT') {
       
         const promisePool = connection.promise();
@@ -23,4 +23,4 @@ const UpdateUser =  async (req,res) =>{
     }
 }
 
-export default UpdateUser;
+export default putUpdateUser;

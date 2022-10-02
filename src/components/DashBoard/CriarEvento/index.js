@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
-import { Box, DarkMode, Flex, useDisclosure } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import NavBar from '../SideBar/Desktop/NavBar'
 import SideBarMobile from '../SideBar/Mobile'
 import SideBar from '../SideBar/Desktop'
 import { GlobalProvider } from '../../../../context/globalContext'
 import FormEvento from './FormEvento'
+
 
 const CriarEventoContent = () => {
   

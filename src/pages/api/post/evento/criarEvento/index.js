@@ -1,7 +1,7 @@
 import React from 'react'
 import { connection } from '../../../../../../config/mySql'
 
-const handlerCriarEvento = async (req, res) => {
+const postCriarEvento = async (req, res) => {
 
     if (req.method === 'POST') {
 
@@ -28,4 +28,4 @@ const handlerCriarEvento = async (req, res) => {
 
 }
 
-export default handlerCriarEvento
+export default postCriarEvento

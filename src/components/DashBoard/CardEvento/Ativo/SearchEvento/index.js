@@ -1,7 +1,7 @@
 import { Box, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import {MdOutlineSearch} from 'react-icons/md'
-import { GlobalProvider } from '../../../../../context/globalContext';
+import { GlobalProvider } from '../../../../../../context/globalContext';
 
 const SearchEvento = () => {
 
