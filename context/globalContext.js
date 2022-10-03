@@ -77,6 +77,25 @@ const GlobalContext = ({ children }) => {
 
   const handlerActiveEditeLocalidade = () => setActiveEditeLocalidade(!activeEditeLocalidade);
 
+  const [informacaoOrganizadorAtivoViewHidden, setInformacaoOrganizadorAtivoViewHidden] = useState(false);
+
+  const handlerInformacaoOrganizadorAtivoView = () => setInformacaoOrganizadorAtivoViewHidden(!informacaoOrganizadorAtivoViewHidden);
+
+
+  const [informacaoEventoAtivoViewHidden, setInformacaoEventoAtivoViewHidden] = useState(false);
+
+  const handlerInformacaoEventoAtivoView = () => setInformacaoEventoAtivoViewHidden(!informacaoEventoAtivoViewHidden);
+
+  const [informacaoOrganizadorDesativoViewHidden, setInformacaoOrganizadorDesativoViewHidden] = useState(false);
+
+  const handlerInformacaoOrganizadorDesativoView = () => setInformacaoOrganizadorDesativoViewHidden(!informacaoOrganizadorDesativoViewHidden);
+
+
+  const [informacaoEventoDesativoViewHidden, setInformacaoEventoDesativoViewHidden] = useState(false);
+
+  const handlerInformacaoEventoDesativoView = () => setInformacaoEventoDesativoViewHidden(!informacaoEventoDesativoViewHidden);
+
+
   // State para Perfil
 
   const [nickName, setNickName] = useState("");
@@ -390,6 +409,7 @@ const GlobalContext = ({ children }) => {
     pagesEventos,
     pagesUsers,
     dataEventoAtivo,
+    dataEventDesativado,
     pagesDesativadoEventos,
     setSearchUsers,
     onChangeSearch,
@@ -418,6 +438,14 @@ const GlobalContext = ({ children }) => {
     onChangeTitulo,
     onChangeDescricao,
     onChangeLogradouro,
+    handlerInformacaoOrganizadorDesativoView,
+    handlerInformacaoEventoDesativoView,
+    informacaoOrganizadorDesativoViewHidden,
+    informacaoEventoDesativoViewHidden,
+    handlerInformacaoEventoAtivoView,
+    handlerInformacaoOrganizadorAtivoView,
+    informacaoEventoAtivoViewHidden,
+    informacaoOrganizadorAtivoViewHidden,
     onChangeBairro,
     onChangeLocalidade,
     logradouro,

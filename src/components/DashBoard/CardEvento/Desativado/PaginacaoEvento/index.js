@@ -10,8 +10,7 @@ const PaginacaoEventoDesativado = () => {
   const {
     currenItenDesativadoEventos,
     login,
-    setCardIdEvento,
-    
+    setCardIdEvento
   } = useContext(GlobalProvider);
 
   return (
@@ -108,7 +107,7 @@ const PaginacaoEventoDesativado = () => {
                             </Text>
                           </Box>
                         </Box>
-                      <ModalVisualizar id = {e?.id_evento} />
+                      <ModalVisualizar id = {e?.id_evento} ativo = {e?.ativo} />
                       </Box>
                     </Box>
                   </>
