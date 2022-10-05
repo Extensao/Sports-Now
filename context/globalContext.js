@@ -286,68 +286,71 @@ const GlobalContext = ({ children }) => {
     }
   }
 
-
   const valideteFormEvento = () => {
-    if (img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "") {
-      toast.warning("Preencha o campos de titulo");
-    } else if (img != "" && descricao == "" && titulo != "" && logradouro != "" && bairro != "" && localidade != "") {
-      toast.warning("Preencha o campos de descrição");
-    } else if (img != "" && logradouro == "" && titulo != "" && descricao != "" && bairro != "" && localidade != "") {
-      toast.warning("Preencha o campos de endereço");
-    } else if (img != "" && bairro == "" && titulo != "" && descricao != "" && logradouro != "" && localidade != "") {
-      toast.warning("Preencha o campos de bairro");
-    } else if (img != "" && localidade == "" && titulo != "" && descricao != "" && logradouro != "" && bairro != "") {
-      toast.warning("Preencha o campos de localidade");
-    } else if (img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro == "" && localidade == "") {
-      toast.warning("Preencha o campos de titulo, descricao, endereço, bairro e  localidade");
-    } else if (img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro == "" && localidade == "") {
-      toast.warning("Preencha o campos de descricao, endereço, bairro e  localidade");
-    } else if (img != "" && titulo != "" && descricao != "" && logradouro == "" && bairro == "" && localidade == "") {
-      toast.warning("Preencha o campos de endereço, bairro e  localidade");
-    } else if (img != "" && titulo != "" && descricao != "" && logradouro != "" && bairro == "" && localidade == "") {
-      toast.warning("Preencha o campos de bairro e  localidade");
-    } else if (img != "" && titulo == "" && descricao == "" && logradouro != "" && bairro != "" && localidade != "") {
-      toast.warning("Preencha o campos de titulo e descrição");
-    } else if (img != "" && titulo == "" && descricao != "" && logradouro == "" && bairro != "" && localidade != "") {
-      toast.warning("Preencha o campos de titulo e endereço");
-    } else if (img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro == "" && localidade != "") {
-      toast.warning("Preencha o campos de titulo e bairro");
-    } else if (img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro != "" && localidade == "") {
-      toast.warning("Preencha o campos de titulo e localidade");
-    } else if (img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro != "" && localidade != "") {
-      toast.warning("Preencha o campos de descrição e endereço");
-    } else if (img != "" && titulo != "" && descricao == "" && logradouro != "" && bairro == "" && localidade != "") {
-      toast.warning("Preencha o campos de descrição e bairro");
-    } else if (img != "" && titulo != "" && descricao == "" && logradouro != "" && bairro != "" && localidade == "") {
-      toast.warning("Preencha o campos de descrição e localidade");
-    } else if (img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro == "" && localidade != "") {
-      toast.warning("Preencha o campos de descrição, endereço e bairro");
-    } else if (img != "" && titulo != "" && descricao != "" && logradouro != "" && bairro == "" && localidade != "") {
-      toast.warning("Preencha o campos de bairro e localidade");
-    } else if (img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro == "" && localidade != "") {
-      toast.warning("Preencha o campos de titulo, descrição, endereço e bairro");
-    } else if (img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro != "" && localidade != "") {
-      toast.warning("Preencha o campos de titulo, descrição e endereço");
-    } else if (img != "" && titulo != "" && descricao !== "" && logradouro == "" && bairro != "" && localidade == "") {
-      toast.warning("Preencha o campos de endereço e localidade");
-    } else if (img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro != "" && localidade == "") {
-      toast.warning("Preencha o campos de descrição, endereço e localidade");
-    } else if (img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro != "" && localidade == "") {
-      toast.warning("Preencha o campos de titulo, descrição, endereço e localidade");
-    } else if (img != "" && titulo != "" && descricao != "" && logradouro == "" && bairro == "" && localidade != "") {
-      toast.warning("Preencha o campos de endereço e bairro");
-    } else if (img != "" && titulo != "" && descricao == "" && logradouro != "" && bairro == "" && localidade == "") {
-      toast.warning("Preencha o campos de descrição, bairro e localiadade");
-    } else if (img != "" && titulo == "" && descricao != "" && logradouro == "" && bairro == "" && localidade != "") {
-      toast.warning("Preencha o campos de titulo, endereço e bairro");
-    } else if (img != "" && titulo == "" && descricao != "" && logradouro == "" && bairro != "" && localidade == "") {
-      toast.warning("Preencha o campos de titulo, endereço e localidade");
-    } else if (img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro == "" && localidade == "") {
-      toast.warning("Preencha o campos de titulo, bairro e localidade");
-    } else if (titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img?.type != "image/png" && img?.type != "image/jpg") {
-      toast.warning("Insira uma imagem valida que seja com extensão .png ou .jpg");
-    } else {
-      toast.success("Sucesso no seu cadastro de evento!");
+    if(uId != ""){
+      if (img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "") {
+        toast.warning("Preencha o campos de titulo");
+      } else if (img != "" && descricao == "" && titulo != "" && logradouro != "" && bairro != "" && localidade != "") {
+        toast.warning("Preencha o campos de descrição");
+      } else if (img != "" && logradouro == "" && titulo != "" && descricao != "" && bairro != "" && localidade != "") {
+        toast.warning("Preencha o campos de endereço");
+      } else if (img != "" && bairro == "" && titulo != "" && descricao != "" && logradouro != "" && localidade != "") {
+        toast.warning("Preencha o campos de bairro");
+      } else if (img != "" && localidade == "" && titulo != "" && descricao != "" && logradouro != "" && bairro != "") {
+        toast.warning("Preencha o campos de localidade");
+      } else if (img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro == "" && localidade == "") {
+        toast.warning("Preencha o campos de titulo, descricao, endereço, bairro e  localidade");
+      } else if (img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro == "" && localidade == "") {
+        toast.warning("Preencha o campos de descricao, endereço, bairro e  localidade");
+      } else if (img != "" && titulo != "" && descricao != "" && logradouro == "" && bairro == "" && localidade == "") {
+        toast.warning("Preencha o campos de endereço, bairro e  localidade");
+      } else if (img != "" && titulo != "" && descricao != "" && logradouro != "" && bairro == "" && localidade == "") {
+        toast.warning("Preencha o campos de bairro e  localidade");
+      } else if (img != "" && titulo == "" && descricao == "" && logradouro != "" && bairro != "" && localidade != "") {
+        toast.warning("Preencha o campos de titulo e descrição");
+      } else if (img != "" && titulo == "" && descricao != "" && logradouro == "" && bairro != "" && localidade != "") {
+        toast.warning("Preencha o campos de titulo e endereço");
+      } else if (img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro == "" && localidade != "") {
+        toast.warning("Preencha o campos de titulo e bairro");
+      } else if (img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro != "" && localidade == "") {
+        toast.warning("Preencha o campos de titulo e localidade");
+      } else if (img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro != "" && localidade != "") {
+        toast.warning("Preencha o campos de descrição e endereço");
+      } else if (img != "" && titulo != "" && descricao == "" && logradouro != "" && bairro == "" && localidade != "") {
+        toast.warning("Preencha o campos de descrição e bairro");
+      } else if (img != "" && titulo != "" && descricao == "" && logradouro != "" && bairro != "" && localidade == "") {
+        toast.warning("Preencha o campos de descrição e localidade");
+      } else if (img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro == "" && localidade != "") {
+        toast.warning("Preencha o campos de descrição, endereço e bairro");
+      } else if (img != "" && titulo != "" && descricao != "" && logradouro != "" && bairro == "" && localidade != "") {
+        toast.warning("Preencha o campos de bairro e localidade");
+      } else if (img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro == "" && localidade != "") {
+        toast.warning("Preencha o campos de titulo, descrição, endereço e bairro");
+      } else if (img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro != "" && localidade != "") {
+        toast.warning("Preencha o campos de titulo, descrição e endereço");
+      } else if (img != "" && titulo != "" && descricao !== "" && logradouro == "" && bairro != "" && localidade == "") {
+        toast.warning("Preencha o campos de endereço e localidade");
+      } else if (img != "" && titulo != "" && descricao == "" && logradouro == "" && bairro != "" && localidade == "") {
+        toast.warning("Preencha o campos de descrição, endereço e localidade");
+      } else if (img != "" && titulo == "" && descricao == "" && logradouro == "" && bairro != "" && localidade == "") {
+        toast.warning("Preencha o campos de titulo, descrição, endereço e localidade");
+      } else if (img != "" && titulo != "" && descricao != "" && logradouro == "" && bairro == "" && localidade != "") {
+        toast.warning("Preencha o campos de endereço e bairro");
+      } else if (img != "" && titulo != "" && descricao == "" && logradouro != "" && bairro == "" && localidade == "") {
+        toast.warning("Preencha o campos de descrição, bairro e localiadade");
+      } else if (img != "" && titulo == "" && descricao != "" && logradouro == "" && bairro == "" && localidade != "") {
+        toast.warning("Preencha o campos de titulo, endereço e bairro");
+      } else if (img != "" && titulo == "" && descricao != "" && logradouro == "" && bairro != "" && localidade == "") {
+        toast.warning("Preencha o campos de titulo, endereço e localidade");
+      } else if (img != "" && titulo == "" && descricao != "" && logradouro != "" && bairro == "" && localidade == "") {
+        toast.warning("Preencha o campos de titulo, bairro e localidade");
+      } else if (titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img?.type != "image/png" && img?.type != "image/jpg") {
+        toast.warning("Insira uma imagem valida que seja com extensão .png ou .jpg");
+      } else {
+        toast.success("Sucesso no seu cadastro de evento!");
+      }
+    }else{
+      toast.warning("Crie primeiro um perfil com seu nickName e telefone");
     }
   }
 
@@ -431,13 +434,13 @@ const GlobalContext = ({ children }) => {
     onChangeSearchEventoDesativadoAll,
     handlerScrollTop,
     handlerMenu,
-    capitaLizer,
     onChangeNickName,
     onChangeTelefone,
     setImg,
     onChangeTitulo,
     onChangeDescricao,
     onChangeLogradouro,
+    capitaLizer,
     handlerInformacaoOrganizadorDesativoView,
     handlerInformacaoEventoDesativoView,
     informacaoOrganizadorDesativoViewHidden,

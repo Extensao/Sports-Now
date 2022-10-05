@@ -11,8 +11,7 @@ const LocalidadeEvento = () => {
         onChangeBairro,
         onChangeLocalidade,
         localidadeHidden,
-        localidade,
-        capitaLizer
+        localidade
     } = useContext(GlobalProvider);
 
 
@@ -63,7 +62,7 @@ const LocalidadeEvento = () => {
                         <Input
                         type={'text'}
                         maxLength={2}
-                        value={capitaLizer(localidade)}
+                        value={localidade.toUpperCase()}
                         placeholder={'Informe o estado em que vai acontecer o evento. ex Rondônia'}
                         onChange={onChangeLocalidade}
                     />

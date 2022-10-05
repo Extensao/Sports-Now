@@ -121,10 +121,16 @@ const FormEvento = () => {
                         w={'100%'}
                         maxW={'700px'}
                         onClick={() => {
-                            if (titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img != "" && img?.type == "image/png" || img?.type == "image/jpg") {
-                                FormEventoCriar(titulo, descricao, logradouro, bairro, localidade, uId, img);
+                            if( uId != ""){
+                                if (titulo != "" && descricao != "" && logradouro != "" && bairro != "" && localidade != "" && img != "" && img?.type == "image/png" || img?.type == "image/jpg") {
+                                    FormEventoCriar(titulo, descricao, logradouro, bairro, localidade, uId, img);
+                                    setTimeout(() => {
+                                        window.location.href = "/dashboard/acompanharEvento"
+                                    }, 5800)
+                                }
+                            }else{
                                 setTimeout(() => {
-                                    window.location.href = "/dashboard/acompanharEvento"
+                                    window.location.href = "/dashboard/perfil"
                                 }, 5800)
                             }
                             valideteFormEvento();
