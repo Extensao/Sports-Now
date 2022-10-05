@@ -14,7 +14,7 @@ const CardEventoAtivo = () => {
   return (
    <>
       {
-        currenItenEventos != "" ?
+        currenItenEventos == "" ?
           <>
             {/* <SearchEvento /> */}
             <PaginacaoEvento />
