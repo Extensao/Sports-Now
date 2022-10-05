@@ -128,7 +128,7 @@ const FormEvento = () => {
                                 }, 5800)
                             }
                             valideteFormEvento();
-                        }}
+                         }}
                     >
                         Salvar
                     </Button>

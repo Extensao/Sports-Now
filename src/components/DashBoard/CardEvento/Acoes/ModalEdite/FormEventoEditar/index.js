@@ -121,14 +121,11 @@ const FormEventoEditar = (props) => {
                         w={'100%'}
                         maxW={'700px'}
                         onClick={() => {
-                            // if(img != "" && img?.type == "image/png" || img?.type == "image/jpg"){ 
                                 EditarEvento(titulo, descricao, logradouro, bairro, localidade, img, props.id, activeImg);
-                                toast.success("Edição feita com sucesso");
                                 setTimeout(()=>{
                                     window.location.href = "/dashboard/acompanharEvento"
                                   },5800)
-                            // }
-                            // valideteFormEventoEditar();
+                            valideteFormEventoEditar();
                         }}
                     >
                         Editar

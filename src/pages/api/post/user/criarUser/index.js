@@ -9,9 +9,14 @@ const postCriarUser = async (req, res) => {
         
         var { Nome, Email, Telefone, NickName, PhotoURL, Dia, Mes, Ano, Hora, Minuto} = req.body;
   
+
         var HoraTratamento = Hora < 9 ? '0'+Hora : Hora;
 
         var MinutoTratamento = Minuto < 9 ? '0'+Minuto : Minuto;
+
+        var DataFormtDia = Dia < 9 ? '0'+Dia : Dia;
+
+        var DataFormat = Mes < 9 ? DataFormtDia+'/'+'0'+(Mes+1)+'/'+Ano+' '+HoraTratamento+':'+MinutoTratamento : DataFormtDia+'/'+(Mes+1)+'/'+Ano+' '+HoraTratamento+':'+MinutoTratamento;
 
         const sql = `
                       INSERT INTO tb_user 
@@ -20,7 +25,7 @@ const postCriarUser = async (req, res) => {
                     `;
 
        await promisePool.query(sql,
-       [Nome,Email,Telefone, Mes < 9 ? Dia+'/'+'0'+(Mes+1)+'/'+Ano+' '+HoraTratamento+':'+MinutoTratamento : Dia+'/'+(Mes+1)+'/'+Ano+' '+HoraTratamento+':'+MinutoTratamento,'1',NickName,PhotoURL])
+       [Nome,Email,Telefone,DataFormat,'1',NickName,PhotoURL])
           .then(([rows]) =>{
             res.status(200).json(rows)
           }).catch(err=>{

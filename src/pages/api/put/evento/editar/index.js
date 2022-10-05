@@ -20,9 +20,6 @@ const putEditarEvento = async (req, res) => {
         } = req.body;
 
         if (Titulo != "" && Descricao != "" && Img != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Descricao : ", Descricao)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.titulo = ?, e.descricao = ?, e.img_evento = ?
@@ -37,10 +34,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Titulo != "" && Descricao != "" && Logradouro != "" && Img != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.titulo = ?, e.descricao = ?, e.endereco = ?, e.img_evento = ?
@@ -55,11 +48,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Titulo != "" && Descricao != "" && Logradouro != "" && Bairro != "" && Img != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.titulo = ?, e.descricao = ?, e.endereco = ?, e.bairro = ?, e.img_evento = ?
@@ -74,12 +62,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Titulo != "" && Descricao != "" && Logradouro != "" && Bairro != "" && Localidade != "" && Img != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.titulo = ?, e.descricao = ?, e.endereco = ?, e.bairro = ?, e.localidade = ?, e.img_evento = ?
@@ -94,11 +76,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Titulo != "" && Logradouro != "" && Bairro != "" && Localidade != "" && Img != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.titulo = ?,  e.endereco = ?, e.bairro = ?, e.localidade = ?, e.img_evento = ?
@@ -113,10 +90,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Titulo != "" && Bairro != "" && Localidade != "" && Img != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.titulo = ?, e.bairro = ?, e.localidade = ?, e.img_evento = ?
@@ -131,10 +104,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Titulo != "" && Localidade != "" && Img != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.titulo = ?, e.localidade = ?, e.img_evento = ?
@@ -149,8 +118,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Titulo != "" && Img != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Imagem : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.titulo = ?, e.img_evento = ?
@@ -165,9 +132,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Descricao != "" && Logradouro != "" && Img != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.endereco = ?, e.img_evento = ?
@@ -182,10 +146,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Descricao != "" && Logradouro != "" && Bairro != "" && Img != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.endereco = ?, e.bairro = ?, e.img_evento = ?
@@ -200,11 +160,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Descricao != "" && Logradouro != "" && Bairro != "" && Localidade != "" && Img != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.endereco = ?, e.bairro = ?, e.localidade = ?, e.img_evento = ?
@@ -219,9 +174,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Descricao != "" && Bairro != "" && Localidade != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Localidade : ", Localidade)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.bairro = ?, e.localidade = ?, e.img_evento = ?
@@ -236,10 +188,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Descricao != "" && Bairro != "" && Localidade != "" && Img != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.bairro = ?, e.localidade = ?, e.img_evento = ?
@@ -254,9 +202,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Descricao != "" && Localidade != "" && Img != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.localidade = ?, e.img_evento = ?
@@ -271,8 +216,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Descricao != "" && Img != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.img_evento = ?
@@ -287,9 +230,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Logradouro != "" && Bairro != "" && Img != "") {
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.endereco = ?, e.bairro = ?, e.img_evento = ?
@@ -304,10 +244,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Logradouro != "" && Bairro != "" && Localidade != "" && Img != "") {
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.endereco = ?, e.bairro = ?, e.localidade = ?, e.img_evento = ?
@@ -322,9 +258,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Logradouro != "" && Localidade != "" && Img != "") {
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                  e.endereco = ?, e.bairro = ?, e.img_evento = ?
@@ -339,8 +272,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Logradouro != "" && Img != "") {
-            console.log("Logradouro : ", Logradouro)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.endereco = ?, e.img_evento = ?
@@ -355,9 +286,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Bairro != "" && Localidade != "" && Img != "") {
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.bairro = ?, e.localidade = ?, e.img_evento = ?
@@ -372,8 +300,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Bairro != "" && Img != "") {
-            console.log("Bairro : ", Bairro)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.bairro = ?, e.img_evento = ?
@@ -388,8 +314,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Localidade != "" && Img != "") {
-            console.log("Localidade : ", Localidade)
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.localidade = ?, e.img_evento = ?
@@ -404,7 +328,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Img != "") {
-            console.log("Img : ", Img)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.img_evento = ?
@@ -432,9 +355,6 @@ const putEditarEvento = async (req, res) => {
         } = req.body;
 
         if (Titulo != "" && Descricao != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Descricao : ", Descricao)
-
             const sql = `
                                 UPDATE tb_evento e SET 
                                 e.titulo = ?, e.descricao = ?
@@ -450,10 +370,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Titulo != "" && Descricao != "" && Logradouro != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-
             const sql = `
                     UPDATE tb_evento e SET 
                     e.titulo = ?, e.descricao = ?, e.endereco = ?
@@ -469,11 +385,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Titulo != "" && Descricao != "" && Logradouro != "" && Bairro != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-
             const sql = `
                     UPDATE tb_evento e SET 
                     e.titulo = ?, e.descricao = ?, e.endereco = ?, e.bairro = ?
@@ -489,12 +400,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Titulo != "" && Descricao != "" && Logradouro != "" && Bairro != "" && Localidade != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-
             const sql = `
                     UPDATE tb_evento e SET 
                     e.titulo = ?, e.descricao = ?, e.endereco = ?, e.bairro = ?, e.localidade = ?
@@ -510,11 +415,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Titulo != "" && Logradouro != "" && Bairro != "" && Localidade != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-
             const sql = `
                     UPDATE tb_evento e SET 
                     e.titulo = ?, e.endereco = ?, e.bairro = ?, e.localidade = ?
@@ -530,10 +430,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Titulo != "" && Bairro != "" && Localidade != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-
             const sql = `
                     UPDATE tb_evento e SET 
                     e.titulo = ?, e.bairro = ?, e.localidade = ?
@@ -549,9 +445,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Titulo != "" && Localidade != "") {
-            console.log("Titulo : ", Titulo)
-            console.log("Localidade : ", Localidade)
-
             const sql = `
                     UPDATE tb_evento e SET 
                     e.titulo = ?, e.localidade = ?
@@ -567,8 +460,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Titulo != "") {
-            console.log("Titulo : ", Titulo)
-
             const sql = `
                     UPDATE tb_evento e SET 
                     e.titulo = ?
@@ -584,9 +475,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Descricao != "" && Logradouro != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-
             const sql = `
                     UPDATE tb_evento e SET 
                     e.descricao = ?, e.endereco = ?
@@ -602,10 +490,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Descricao != "" && Logradouro != "" && Bairro != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-
             const sql = `
                     UPDATE tb_evento e SET 
                     e.descricao = ?, e.endereco = ?, e.bairro = ?
@@ -621,11 +505,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Descricao != "" && Logradouro != "" && Bairro != "" && Localidade != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-
             const sql = `
                     UPDATE tb_evento e SET 
                      e.descricao = ?, e.endereco = ?, e.bairro = ?, e.localidade = ?
@@ -641,10 +520,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Descricao != "" && Bairro != "" && Localidade != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Logradouro : ", Logradouro)
-            console.log("Localidade : ", Localidade)
-
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.bairro = ?, e.localidade = ?
@@ -659,10 +534,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Descricao != "" && Bairro != "" && Localidade != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
-
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.bairro = ?, e.localidade = ?
@@ -678,9 +549,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Descricao != "" && Localidade != "") {
-            console.log("Descricao : ", Descricao)
-            console.log("Localidade : ", Localidade)
-
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?, e.localidade = ?
@@ -696,7 +564,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Descricao != "") {
-            console.log("Descricao : ", Descricao)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.descricao = ?
@@ -711,9 +578,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Logradouro != "" && Bairro != "") {
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
-
             const sql = `
                 UPDATE tb_evento e SET 
                 e.endereco = ?, e.bairro = ?
@@ -744,8 +608,6 @@ const putEditarEvento = async (req, res) => {
                 })
 
         } else if (Logradouro != "" && Localidade != "") {
-            console.log("Logradouro : ", Logradouro)
-            console.log("Bairro : ", Bairro)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.endereco = ?, e.localidade = ?
@@ -760,7 +622,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Logradouro != "") {
-            console.log("Logradouro : ", Logradouro)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.endereco = ?
@@ -775,8 +636,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Bairro != "" && Localidade != "") {
-            console.log("Bairro : ", Bairro)
-            console.log("Localidade : ", Localidade)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.bairro = ?, e.localidade = ?
@@ -791,7 +650,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Bairro != "") {
-            console.log("Bairro : ", Bairro)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.bairro = ?
@@ -806,7 +664,6 @@ const putEditarEvento = async (req, res) => {
                     console.log(err)
                 })
         } else if (Localidade != "") {
-            console.log("Localidade : ", Localidade)
             const sql = `
                 UPDATE tb_evento e SET 
                 e.localidade = ?
