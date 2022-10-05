@@ -13,7 +13,7 @@ const CardEventoDesativado = () => {
   return (
     <>
       {
-        currenItenDesativadoEventos == "" ?
+        currenItenDesativadoEventos != "" ?
           <>
             {/* <SearchEvento /> */}
             <PaginacaoEvento />
