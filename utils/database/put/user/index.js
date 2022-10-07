@@ -1,12 +1,12 @@
 import axios from "axios";
 
 
-const UpdateUser = (NickName,Telefone,UiD) =>{
+const UpdateUser = (nickName,telefone,uId) =>{
     axios.put("/api/put/user/updateUser/",
     {
-        NickName: NickName,
-        Telefone: Telefone,
-        UiD: UiD
+        NickName: nickName,
+        Telefone: telefone,
+        UiD: uId
     })
     .then((res)=>{
         console.log("Deu tudo certo")

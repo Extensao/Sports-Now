@@ -6,7 +6,7 @@ const deleteCardEvento = async(req, res) => {
     
         var { IdEvento } = req.body;
         
-        const sql = 'DELETE FROM tb_evento e WHERE e.id_evento = ?';
+        const sql = 'DELETE FROM tb_evento WHERE id_evento = ?';
     
         await promisePool.query(sql,[IdEvento])
           .then(() =>{

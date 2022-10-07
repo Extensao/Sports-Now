@@ -43,47 +43,20 @@ const DashBoardContet = () => {
         >  
           <SideBarMobile/>
           <Box
-            w={'100%'}
-            minH={'calc(100vh - 70px)'}
-            p={'.5rem'}
-            bg={'red'}
+          p={'1rem'}
+          minH={'calc(100vh - 70px)'}
+          w={'100%'}
+          bg={'red'}
+          ml={'auto'}
+          >
+            <SimpleGrid
+            columns={{base:1,lg:2}}
+            gap={'20px'}
+            mt={'1rem'}
             >
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
-              dashboard
+              <TotalEventoAtivos/>
+              <TotalEventoDesativados/>
+            </SimpleGrid>
           </Box>
         </Box>
    </>

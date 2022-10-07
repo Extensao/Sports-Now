@@ -9,17 +9,6 @@ const TotalEventoAtivos = () => {
     login
   } = useContext(GlobalProvider);
 
-  const [getTotalEventoAtivos, setGetTotalEventoAtivos] = useState("");
-
-  useEffect(()=>{
-    {
-      dataEventoAtivo?.map(d =>{
-           if(d?.email == login?.email)
-           setGetTotalEventoAtivos(d.id_evento.toString().split(" ").length != 0 && d?.ativo == 1 ? d.id_evento.toString().split(" ").length : 0 )
-        })
-    }
-})
-
   return (
     <>
       <Flex
@@ -44,9 +33,7 @@ const TotalEventoAtivos = () => {
              fontSize={40}
               textAlign={'center'}
             >
-              {
-                getTotalEventoAtivos
-              }
+              0
             </Text>
           </Box>
         </Box>

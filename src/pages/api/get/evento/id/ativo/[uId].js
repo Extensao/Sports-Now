@@ -8,13 +8,14 @@ const getEventoAtivo = async (req, res) => {
 
     const promisePool = connection.promise();
 
+    const { uId } = req.query;
 
-    const sql = 'SELECT *  FROM card_evento e WHERE e.ativo = 1';
+    const sql = 'SELECT COUNT(e.id_evento) FROM card_evento e WHERE e.ativo = 1 AND e.id_user = ?';
 
-    await promisePool.query(sql)
-      .then(([rows]) =>{
+    await promisePool.query(sql, [uId])
+      .then(([rows]) => {
         res.status(200).json(rows)
-      }).catch(err=>{
+      }).catch(err => {
         console.log(err)
       })
 

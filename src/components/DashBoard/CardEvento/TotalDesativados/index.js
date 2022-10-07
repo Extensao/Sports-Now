@@ -9,18 +9,6 @@ const TotalEventoDesativados = () => {
     login
 } = useContext(GlobalProvider);
 
-const [getTotalEventoDesativos,setGetTotalEventoDesativos] = useState("");
-
-useEffect(()=>{
-    {
-      dataEventDesativado?.map(d =>{
-           if(d?.email == login?.email)
-           console.log(d.id_evento.toString().split(" ").length)
-           setGetTotalEventoDesativos(d.id_evento.toString().split(" ").length == 0 && d?.ativo == 0  ? d.id_evento.toString().split(" ").length : 0 )
-        })
-    }
-})
-
   return (
    <>
      <Flex
@@ -45,9 +33,7 @@ useEffect(()=>{
              fontSize={40}
               textAlign={'center'}
             >
-              {
-                getTotalEventoDesativos
-              }
+            0
             </Text>
           </Box>
         </Box>

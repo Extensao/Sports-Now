@@ -13,12 +13,12 @@ const CardEventoAtivo = () => {
 
   return (
    <>
-      {
+      {/* {
         currenItenEventos != "" ?
-          <>
+          <> */}
             {/* <SearchEvento /> */}
             <PaginacaoEvento />
-          </>
+          {/* </>
           :
           <>
             <Flex
@@ -36,7 +36,7 @@ const CardEventoAtivo = () => {
               />
             </Flex>
           </>
-      }
+      } */}
    </>
   )
 }

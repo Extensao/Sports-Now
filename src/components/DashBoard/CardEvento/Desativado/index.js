@@ -12,12 +12,12 @@ const CardEventoDesativado = () => {
 
   return (
     <>
-      {
+      {/* {
         currenItenDesativadoEventos != "" ?
-          <>
+          <> */}
             {/* <SearchEvento /> */}
             <PaginacaoEvento />
-          </>
+          {/* </>
           :
           <>
             <Flex
@@ -35,7 +35,7 @@ const CardEventoDesativado = () => {
               />
             </Flex>
           </>
-      }
+      } */}
 
     </>
   )

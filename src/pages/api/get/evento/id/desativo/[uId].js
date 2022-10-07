@@ -1,4 +1,4 @@
-import { connection } from '../../../../../../../config/mySql/'
+import { connection } from '../../../../../../../config/mySql'
 
 const getEventoDesativo = async (req, res) => {
 
@@ -7,9 +7,11 @@ const getEventoDesativo = async (req, res) => {
 
     const promisePool = connection.promise();
 
-    const sql = 'SELECT * FROM card_evento e WHERE e.ativo = 0';
+    const { uId } = req.query;
 
-    await promisePool.query(sql)
+    const sql = 'SELECT COUNT(e.id_evento) FROM card_evento c WHERE c.ativo = 0 AND e.id_user = ?';
+
+    await promisePool.query(sql, [uId])
       .then(([rows]) =>{
         res.status(200).json(rows)
       }).catch(err=>{

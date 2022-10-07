@@ -8,6 +8,8 @@ import { GetAllEventoAtivo } from '../utils/database/get/evento/all/ativo'
 import { GetAllEventoDesativo } from "../utils/database/get/evento/all/desativo";
 import { GetAllPermissao } from '../utils/database/get/permissao/all'
 import { GetEventoAll } from "../utils/database/get/evento/all";
+import { GetAllEventoAtivoId } from "../utils/database/get/evento/id/ativo";
+import { GetAllEventoDesativoId } from "../utils/database/get/evento/id/desativo";
 
 const GlobalProvider = createContext({});
 
@@ -21,6 +23,10 @@ const GlobalContext = ({ children }) => {
   const [dataEventoAtivo, setDataEventoAtivo] = useState([]);
 
   const [dataEventDesativado, setDataEventoDesativado] = useState([]);
+
+  const [dataEventoAtivoId, setDataEventoAtivoId] = useState([]);
+
+  const [dataEventDesativadoId, setDataEventoDesativadoId] = useState([]);
 
   const [dataPermissoes, setDataPermissoes] = useState([]);
 
@@ -389,6 +395,14 @@ const GlobalContext = ({ children }) => {
   useEffect(() => {
     GetAllPermissao(setDataPermissoes);
   }, [])
+
+  // useEffect(()=>{
+  //   GetAllEventoAtivoId(setDataEventoAtivoId, uId);
+  // },[])
+
+  // useEffect(()=>{
+  //   GetAllEventoDesativoId(setDataEventoDesativadoId, uId);
+  // },[])
 
   useEffect(() => {
     dataUsers?.map((u) => {
